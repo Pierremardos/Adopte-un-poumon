@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1545594999 source:c:\users\jonas\dropbox\esgi\2e annee\c\projet premier semestre\bood type\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
