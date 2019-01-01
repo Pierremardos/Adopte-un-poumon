@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1546352524 source:d:\c\graphique\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
+	"fonction.h"
+
+1546356789 d:\c\graphique\fonction.h
+
+1546353326 source:d:\c\graphique\main.c
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
+	"fonction.h"
+
+1546356789 source:d:\c\graphique\fonction.c
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
+	"fonction.h"
+
+1546356789 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\fonction.c
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
+	"fonction.h"
+
+1546356789 c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\fonction.h
+
+1546353326 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\main.c
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
+	"fonction.h"
+
