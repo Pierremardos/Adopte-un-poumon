@@ -22,7 +22,7 @@
 	<string.h>
 	"fonction.h"
 
-1546356789 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\fonction.c
+1546360101 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\functions.cpp
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -31,7 +31,7 @@
 
 1546356789 c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\fonction.h
 
-1546353326 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\main.c
+1546360034 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
