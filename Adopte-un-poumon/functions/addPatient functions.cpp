@@ -7,6 +7,7 @@
 
 
 
+
 void zerofgets(string str, int size)
 {
     fflush(stdin);

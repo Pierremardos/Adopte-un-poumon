@@ -54,8 +54,8 @@
 		<Unit filename="functions/Blood type header.h" />
 		<Unit filename="functions/CPT functions.cpp" />
 		<Unit filename="functions/CPT header.h" />
-		<Unit filename="functions/Graphical functions.cpp" />
-		<Unit filename="functions/Graphical header.h" />
+		<Unit filename="functions/Graphical_functions.cpp" />
+		<Unit filename="functions/Graphical_header.h" />
 		<Unit filename="functions/addPatiens header.h" />
 		<Unit filename="functions/addPatient functions.cpp" />
 		<Unit filename="main.cpp" />
