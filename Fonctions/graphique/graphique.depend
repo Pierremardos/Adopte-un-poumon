@@ -6,15 +6,18 @@
 	<string.h>
 	"fonction.h"
 
-1546356789 d:\c\graphique\fonction.h
+1546489500 d:\c\graphique\fonction.h
 
-1546353326 source:d:\c\graphique\main.c
+1546440126 source:d:\c\graphique\main.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
 	"fonction.h"
 
+<<<<<<< HEAD
 1546356789 source:d:\c\graphique\fonction.c
 	<stdio.h>
 	<stdlib.h>
@@ -32,9 +35,14 @@
 1546356789 c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\fonction.h
 
 1546530945 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\fonctions\graphique\main.cpp
+=======
+1546489500 source:d:\c\graphique\fonction.c
+>>>>>>> 8f30ecb013388bd9e4d0daf907c45ea57d4def6a
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
 	"fonction.h"
 
