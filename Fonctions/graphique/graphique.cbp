@@ -56,13 +56,9 @@
 			<Add library="comctl32" />
 			<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libmysqlclient.a" />
 		</Linker>
-		<Unit filename="fonction.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="fonction.cpp" />
 		<Unit filename="fonction.h" />
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
