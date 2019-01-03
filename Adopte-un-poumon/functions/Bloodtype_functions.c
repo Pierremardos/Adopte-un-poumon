@@ -20,7 +20,7 @@ string bloodCmp(char bloodType[3])
     else if (!strcmp(bloodType,"b")&& strlen(bloodType)==1)
     {
         result = malloc(5*sizeof(char));
-        strcpy(result, b);z
+        strcpy(result, b);
         strcat(result, o);
         return result;
     }

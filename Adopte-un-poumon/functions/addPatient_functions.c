@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <winsock.h>
 #include <MYSQL/mysql.h>
-#include "addPatiens_header.h"
+#include "addPatients_header.h"
 
 
 

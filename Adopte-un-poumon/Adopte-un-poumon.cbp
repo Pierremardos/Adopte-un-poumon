@@ -49,16 +49,27 @@
 			<Add library="gthread-2.0" />
 			<Add library="gtk-win32-2.0" />
 			<Add library="cairo" />
+			<Add library="../../../../../../Program Files (x86)/CodeBlocks/MinGW/lib/libmysqlclient.a" />
 		</Linker>
-		<Unit filename="functions/Blood type functions.cpp" />
-		<Unit filename="functions/Blood type header.h" />
-		<Unit filename="functions/CPT functions.cpp" />
-		<Unit filename="functions/CPT header.h" />
-		<Unit filename="functions/Graphical_functions.cpp" />
+		<Unit filename="functions/Bloodtype_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/Bloodtype_header.h" />
+		<Unit filename="functions/CPT_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/CPT_header.h" />
+		<Unit filename="functions/Graphical_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="functions/Graphical_header.h" />
-		<Unit filename="functions/addPatiens header.h" />
-		<Unit filename="functions/addPatient functions.cpp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="functions/addPatient_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/addPatients_header.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

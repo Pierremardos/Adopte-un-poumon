@@ -7,7 +7,7 @@
 #define EXEMPLE_1 0
 #define EXEMPLE_2 1
 #define EXEMPLE_3 2
-#include "functions/Graphical_header.h"
+#include "Graphical_header.h"
 void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 {
     GtkWidget * ask_leave;
@@ -133,7 +133,7 @@ void main_program(int argc, char ** argv)
 
 
 }
-
+/*
 void mysql()
 {
     MYSQL mysql;
@@ -149,6 +149,7 @@ void mysql()
 
     }
 }
+*/
 
 void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWidget * main_box,int argc,char **argv)
 {
