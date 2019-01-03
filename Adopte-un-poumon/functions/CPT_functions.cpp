@@ -1,4 +1,8 @@
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "CPT_header.h"
 
 double cptT(double height,int sex)
 {

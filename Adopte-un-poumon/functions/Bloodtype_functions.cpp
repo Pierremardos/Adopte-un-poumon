@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "addPatients header.h"
+#include "addPatients_header.h"
 string bloodCmp(char bloodType[3])
 {
     char a[3] = "a ";
