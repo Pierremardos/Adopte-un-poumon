@@ -7,7 +7,7 @@
 #define EXEMPLE_1 0
 #define EXEMPLE_2 1
 #define EXEMPLE_3 2
-#include "functions/Graphical_header.h"
+
 
 
 int main(int argc, char **argv)

@@ -15,27 +15,69 @@ void zerofgets(string str, int size)
     str[strcspn(str, "\n")] = 0;
 }
 
-void addPatient (string name,string surname, string birth, string dateInscription, long height, long weight, string bloodType, string HLA, string plasmapherese)
+void addPatientStruct(string name,string surname, string birth, string dateInscription, int height, int weight, string bloodType, string HLA, string plasmapherese, int smoke)
 {
- string request;
- int size;
- size = sizeof(name) + sizeof(surname) + sizeof(birth) + sizeof(dateInscription) + sizeof(height) + sizeof(weight) + sizeof(bloodType) + sizeof(HLA) + sizeof(plasmapherese) + 50;
+    patient p;
+    p.name = name;
+    p.surname = surname;
+    p.birth = birth;
+    p.dateInscription = dateInscription;
+    p.height = height;
+    p.weight = weight;
+    p.bloodType = bloodType;
+    p.HLA = HLA;
+    p.plasmapherese = plasmapherese;
+    p.smoke = smoke;
 
- request = malloc(sizeof(name) + sizeof(surname) + sizeof(birth) + sizeof(dateInscription) + sizeof(height) + sizeof(weight) + sizeof(bloodType) + sizeof(HLA) + sizeof(plasmapherese) + 50);
+
+
 }
-void mysql(string request)
-{
-        MYSQL mysql;
-        mysql_init(&mysql);
-        mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
-        if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
-        {
-            mysql_query(&mysql, request);
-            mysql_close(&mysql);
-        }
-        else
-        {
-            printf("Erreur connexion");
 
-        }
+string query()
+{
+    addPatientStruct("jonas", "nizard", "1998-09-07","2019-01-1",175,60,"o","","",0);
+    patient p;
+    char request[600];
+    char p1[160]="INSERT INTO patients (name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (";
+    char comma[2] = ",";
+    char p2[2] = ")";
+    strcpy(request, p1);
+    strcat(request,p.name);
+    strcat(request,comma);
+    strcat(request,p.surname);
+    strcat(request,comma);
+    strcat(request,p.birth);
+    strcat(request,comma);
+    strcat(request,p.dateInscription);
+    strcat(request,comma);
+    strcat(request,p.height);
+    strcat(request,comma);
+    strcat(request,p.weight);
+    strcat(request,comma);
+    strcat(request,p.bloodType);
+    strcat(request,comma);
+    strcat(request,p.HLA);
+    strcat(request,comma);
+    strcat(request,p.plasmapherese);
+    strcat(request,comma);
+    strcat(request,p.smoke);
+    return (request);
+}
+void add(string request)
+{
+    struct patient p;
+    MYSQL mysql;
+    mysql_init(&mysql);
+    mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
+    if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
+    {
+
+        mysql_query(&mysql, query());
+        mysql_close(&mysql);
+    }
+    else
+    {
+        printf("Erreur connexion");
+
+    }
 }
