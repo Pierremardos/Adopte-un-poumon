@@ -124,7 +124,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 
 }
 
-void formPatient(GtkWidget * SecondWindow,GtkWidget * main_box)
+void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
 {
     GtkWidget * pFrame;
     GtkWidget * label;
