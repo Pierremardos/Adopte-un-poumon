@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 #include <string.h>
-
+#include "config_files.h"
 void changes_files(GtkWidget * mainWindow)
 {
     char * array;
