@@ -59,17 +59,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions/CPT_header.h" />
-		<Unit filename="functions/Graphical_functions.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="functions/Graphical_functions.cpp" />
 		<Unit filename="functions/Graphical_header.h" />
 		<Unit filename="functions/addPatient_functions.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions/addPatients_header.h" />
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

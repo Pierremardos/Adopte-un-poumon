@@ -38,7 +38,7 @@ static GtkItemFactoryEntry MenuItem[] = {
     { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_FIND },
     { "/Fichier/_Nouveaux patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Nouveaux poumons", "<ctrl>S", NULL, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
+    { "/Fichier/_Fermer", "<ctrl>F", NULL/*ici il y avais leave mais ca marche pas*/, 0, "<StockItem>", GTK_STOCK_CLOSE }
 };
 
 static gint iNbMenuItem = sizeof(MenuItem) / sizeof(MenuItem[0]);
@@ -135,30 +135,14 @@ void main_program(int argc, char ** argv)
 
 
 }
-/*
-void mysql()
-{
-    MYSQL mysql;
-    mysql_init(&mysql);
-    mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
-    if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
-    {
 
-    }
-    else
-    {
-        printf("Erreur connexion");
-
-    }
-}
-*/
 
 void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWidget * main_box,int argc,char **argv)
 {
     unsigned int i = 0;
     unsigned int num_champs = 0;
-    static counter=0;
-
+    static int counter=0;
+login_co =
 
 
     // mysql();
@@ -177,7 +161,7 @@ void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWid
 
         //Déclaration des pointeurs de structure
         MYSQL_RES *result = NULL;
-        MYSQL_ROW *row = NULL;
+        MYSQL_ROW row = NULL;
 
 
         //On met le jeu de résultat dans le pointeur result (maintenant on utilise mysql_store_result
@@ -230,7 +214,7 @@ void validate_connexion(GtkWidget *button_co,GtkWidget * second_window,GtkWidget
     GtkEntry *password_co;
     const gchar *login_connexion;
     const gchar *password_connexion;
-    login_co  = g_object_get_data (G_OBJECT(button_co), "login");
+    login_co = g_object_get_data (G_OBJECT(button_co), "login");
     password_co = g_object_get_data (G_OBJECT(button_co), "password");
 
 
