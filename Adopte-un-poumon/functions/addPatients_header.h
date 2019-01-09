@@ -21,6 +21,7 @@ struct patient
 };
 // Prototype
 
-void zerofgets(string str, int size);
-void mysql(string request);
-void addPatientStruct(string name, string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke);
+void mysql(string);
+void addPatientStruct(string, string, string, string, string, string, string, string, string, string);
+void addPatientWindow(int,char **,GtkWidget *);
+string query();

@@ -71,9 +71,9 @@ void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 static GtkItemFactoryEntry MenuItem[] = {
     { "/_Fichier", NULL, NULL, 0, "<Branch>" },
     { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_FIND },
-    { "/Fichier/_Nouveaux patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_ADD },
+    { "/Fichier/_Nouveaux patients", "<ctrl>A", addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Nouveaux poumons", "<ctrl>S", NULL, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Fermer", "<ctrl>F", leave/*ici il y avais leave mais ca marche pas*/, 0, "<StockItem>", GTK_STOCK_CLOSE }
+    { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
 };
 
 static gint iNbMenuItem = sizeof(MenuItem) / sizeof(MenuItem[0]);
@@ -406,19 +406,7 @@ void launch_program(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
 
 
 }
-/*
-int Hla(char  hla_test[3])
-{
-    if (strcmp(hla_test,"A2") == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return -1;
-    }
-}
-*/
+
 
 char * convert_text (gchar * text)
 {

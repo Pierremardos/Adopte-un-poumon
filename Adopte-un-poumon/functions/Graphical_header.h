@@ -2,7 +2,6 @@
 #define LIBRARY_H_INCLUDED
 void delete_main_window(int,char **,GtkWidget *);
 void second_window(int,char **,GtkWidget *);
-void second_window(int, char **,GtkWidget *);
 void launch_program(GtkWidget *,GtkWidget *, gint);
 int Hla(char);
 char * convert_text (gchar *);
