@@ -12,15 +12,15 @@ struct patient
     string surname;
     string birth;
     string dateInscription;
-    int  height;
-    int weight;
+    string height;
+    string weight;
     string bloodType;
     string HLA;
     string plasmapherese;
-    int smoke;
+    string smoke;
 };
 // Prototype
 
 void zerofgets(string str, int size);
 void mysql(string request);
-void addPatientStruct(string name, string surname, string birth, string dateInscription, int height, int weight, char bloodType[3], string HLA, string plasmapherese, int smoke);
+void addPatientStruct(string name, string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke);

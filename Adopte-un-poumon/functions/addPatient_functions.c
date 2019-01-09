@@ -15,7 +15,7 @@ void zerofgets(string str, int size)
     str[strcspn(str, "\n")] = 0;
 }
 
-void addPatientStruct(string name,string surname, string birth, string dateInscription, int height, int weight, string bloodType, string HLA, string plasmapherese, int smoke)
+void addPatientStruct(string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
 {
     patient p;
     p.name = name;
@@ -35,7 +35,7 @@ void addPatientStruct(string name,string surname, string birth, string dateInscr
 
 string query()
 {
-    addPatientStruct("jonas", "nizard", "1998-09-07","2019-01-1",175,60,"o","","",0);
+    addPatientStruct("jonas", "nizard", "1998-09-07","2019-01-1","175","60","o","","","0");
     patient p;
     char request[600];
     char p1[160]="INSERT INTO patients (name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (";
