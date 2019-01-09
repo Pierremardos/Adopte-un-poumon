@@ -2,6 +2,7 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="functions\Bloodtype_functions.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="578" topLine="16" />
@@ -17,6 +18,8 @@
 			<Cursor1 position="15693" topLine="473" />
 		</Cursor>
 	</File>
+=======
+>>>>>>> e29e3c614f6e26e2dbae969b75ff1fd7cc6b417f
 	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="242" topLine="6" />
@@ -24,6 +27,7 @@
 	</File>
 	<File name="functions\Graphical_header.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="1191" topLine="0" />
 		</Cursor>
 	</File>
@@ -35,6 +39,19 @@
 	<File name="functions\config_files.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="273" topLine="4" />
+=======
+			<Cursor1 position="578" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="functions\addPatient_functions.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="104" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="functions\Graphical_functions.c" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2804" topLine="0" />
+>>>>>>> e29e3c614f6e26e2dbae969b75ff1fd7cc6b417f
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

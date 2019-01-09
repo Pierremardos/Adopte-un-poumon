@@ -33,10 +33,6 @@
 			<Add option="-mms-bitfields" />
 		</Compiler>
 		<Linker>
-			<Add library="gdi32" />
-			<Add library="user32" />
-			<Add library="kernel32" />
-			<Add library="comctl32" />
 			<Add library="glib-2.0" />
 			<Add library="pangocairo-1.0" />
 			<Add library="pangowin32-1.0" />
@@ -49,6 +45,10 @@
 			<Add library="gthread-2.0" />
 			<Add library="gtk-win32-2.0" />
 			<Add library="cairo" />
+			<Add library="gdi32" />
+			<Add library="user32" />
+			<Add library="kernel32" />
+			<Add library="comctl32" />
 			<Add library="../../../../../../Program Files (x86)/CodeBlocks/MinGW/lib/libmysqlclient.a" />
 		</Linker>
 		<Unit filename="functions/Bloodtype_functions.c">
