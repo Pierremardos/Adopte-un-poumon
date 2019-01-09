@@ -78,49 +78,91 @@ void add(string request)
 }
 /*----------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
-------------------------------------------Passage Graphique -----------------------------
+------------------------------------------Passage Graphique ------------------------------
 ------------------------------------------------------------------------------------------*/
 
-void addPatientStructWindow(int argc, char ** argv,GtkWidget * mainWindow)
+void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 {
     GtkWidget * main_box = NULL;
-    GtkWidget * SecondWindow=NULL;
+    GtkWidget * patientAddWindow=NULL;
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
 
     /* Création de la fenêtre */
-    SecondWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    g_signal_connect(G_OBJECT(SecondWindow), "delete-event", G_CALLBACK(gtk_main_quit), NULL);
+    patientAddWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    g_signal_connect(G_OBJECT(patientAddWindow), "delete-event", G_CALLBACK(gtk_main_quit), NULL);
 
     /* Affichage et boucle évènementielle */
-    gtk_widget_show(SecondWindow);
+    gtk_widget_show(patientAddWindow);
 
     /* On definit le titre de la fenêtre */
-    gtk_window_set_title(GTK_WINDOW(SecondWindow), "Connexion :");
+    gtk_window_set_title(GTK_WINDOW(patientAddWindow), "Ajout d'un patient");
 
     /* Définition de la position */
-    gtk_window_set_position(GTK_WINDOW(SecondWindow), GTK_WIN_POS_CENTER_ALWAYS  );
+    gtk_window_set_position(GTK_WINDOW(patientAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* Définition d'un icone de la fenêtre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(SecondWindow),"organes.jpg",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organes.jpg",NULL);
 
     /* On définit la taile de la fenêtre par défault */
-    gtk_window_resize(GTK_WINDOW(SecondWindow), 500,500);
+    gtk_window_resize(GTK_WINDOW(patientAddWindow), 500,500);
 
     /* Maximiser la fenêtre */
-    gtk_window_maximize (GTK_WINDOW(SecondWindow));
+    gtk_window_maximize (GTK_WINDOW(patientAddWindow));
 
     /* Restaurer la fenetre */
-    gtk_window_unmaximize(GTK_WINDOW(SecondWindow));
+    gtk_window_unmaximize(GTK_WINDOW(patientAddWindow));
+
+    /* Création de la GtkBox verticale */
+    main_box = gtk_vbox_new(TRUE, 0);void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
+{
+    GtkWidget * main_box = NULL;
+    GtkWidget * patientAddWindow=NULL;
+
+    /* Initialisation de GTK+ */
+    gtk_init(&argc, &argv);
+
+    /* Création de la fenêtre */
+    patientAddWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    g_signal_connect(G_OBJECT(patientAddWindow), "delete-event", G_CALLBACK(gtk_main_quit), NULL);
+
+    /* Affichage et boucle évènementielle */
+    gtk_widget_show(patientAddWindow);
+
+    /* On definit le titre de la fenêtre */
+    gtk_window_set_title(GTK_WINDOW(patientAddWindow), "Ajout d'un patient");
+
+    /* Définition de la position */
+    gtk_window_set_position(GTK_WINDOW(patientAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
+
+    /* Définition d'un icone de la fenêtre */
+    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organes.jpg",NULL);
+
+    /* On définit la taile de la fenêtre par défault */
+    gtk_window_resize(GTK_WINDOW(patientAddWindow), 500,500);
+
+    /* Maximiser la fenêtre */
+    gtk_window_maximize (GTK_WINDOW(patientAddWindow));
+
+
 
     /* Création de la GtkBox verticale */
     main_box = gtk_vbox_new(TRUE, 0);
     /* Ajout de la GtkVBox dans la fenetre */
-    gtk_container_add(GTK_CONTAINER(SecondWindow), main_box);
-    connexion(SecondWindow,main_box);
+    gtk_container_add(GTK_CONTAINER(patientAddWindow), main_box);
 
-    gtk_widget_show_all(SecondWindow);
+
+    gtk_widget_show_all(patientAddWindow);
+    gtk_main();
+
+
+}
+    /* Ajout de la GtkVBox dans la fenetre */
+    gtk_container_add(GTK_CONTAINER(patientAddWindow), main_box);
+
+
+    gtk_widget_show_all(patientAddWindow);
     gtk_main();
 
 

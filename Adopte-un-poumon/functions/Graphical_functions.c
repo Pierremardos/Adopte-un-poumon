@@ -71,7 +71,7 @@ void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 static GtkItemFactoryEntry MenuItem[] = {
     { "/_Fichier", NULL, NULL, 0, "<Branch>" },
     { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_FIND },
-    { "/Fichier/_Nouveaux patients", "<ctrl>A", addPatientStructWindow, 0, "<StockItem>", GTK_STOCK_ADD },
+    { "/Fichier/_Nouveaux patients", "<ctrl>A", addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Nouveaux poumons", "<ctrl>S", NULL, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
 };

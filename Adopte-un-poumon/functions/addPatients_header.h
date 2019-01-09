@@ -23,5 +23,5 @@ struct patient
 
 void mysql(string);
 void addPatientStruct(string, string, string, string, string, string, string, string, string, string);
-void addPatientStructWindow(int,char **,GtkWidget *);
+void addPatientWindow(int,char **,GtkWidget *);
 string query();
