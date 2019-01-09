@@ -179,11 +179,24 @@ void formPatient(GtkWidget * SecondWindow,GtkWidget * main_box)
     weight = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), weight, FALSE, FALSE, 0);
 
-    label = gtk_label_new("Poids (en kg) :");
+    label = gtk_label_new("Groupe Sanguin :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     bloodType = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), bloodType, FALSE, FALSE, 0);
 
+    label = gtk_label_new("HLA (Mettez des espaces pour les séparer :");
+    gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
+    HLA = gtk_entry_new_with_max_length(3);
+    gtk_box_pack_start(GTK_BOX(main_box), HLA, FALSE, FALSE, 0);
 
+    label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :");
+    gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);plasmapherese
+    plasmapherese = gtk_entry_new_with_max_length(3);
+    gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, FALSE, FALSE, 0);
+
+    label = gtk_label_new("Fumeur :");
+    gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);plasmapherese
+    plasmapherese = gtk_entry_new_with_max_length(3);
+    gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, FALSE, FALSE, 0);
 
 }
