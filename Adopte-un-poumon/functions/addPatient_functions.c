@@ -4,16 +4,10 @@
 #include <winsock.h>
 #include <MYSQL/mysql.h>
 #include "addPatients_header.h"
+#include "zerogets.h"
 
 
 
-
-void zerofgets(string str, int size)
-{
-    fflush(stdin);
-    fgets(str, size, stdin);
-    str[strcspn(str, "\n")] = 0;
-}
 
 void addPatientStruct(string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
 {

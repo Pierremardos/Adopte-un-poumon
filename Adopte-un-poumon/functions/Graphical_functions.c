@@ -35,7 +35,7 @@ void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 
 static GtkItemFactoryEntry MenuItem[] = {
     { "/_Fichier", NULL, NULL, 0, "<Branch>" },
-    { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_FIND },
+    { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockEXEMPLE_3Item>", GTK_STOCK_FIND },
     { "/Fichier/_Nouveaux patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Nouveaux poumons", "<ctrl>S", NULL, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Fermer", "<ctrl>F", NULL/*ici il y avais leave mais ca marche pas*/, 0, "<StockItem>", GTK_STOCK_CLOSE }
@@ -142,7 +142,7 @@ void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWid
     unsigned int i = 0;
     unsigned int num_champs = 0;
     static int counter=0;
-login_co =
+
 
 
     // mysql();
@@ -210,8 +210,8 @@ login_co =
 void validate_connexion(GtkWidget *button_co,GtkWidget * second_window,GtkWidget * main_box,int argc,char **argv)
 {
 
-    GtkEntry *login_co;
-    GtkEntry *password_co;
+    GtkEntry login_co;
+    GtkEntry password_co;
     const gchar *login_connexion;
     const gchar *password_connexion;
     login_co = g_object_get_data (G_OBJECT(button_co), "login");

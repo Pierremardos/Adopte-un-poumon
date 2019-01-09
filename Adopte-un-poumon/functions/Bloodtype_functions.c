@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "Bloodtype_header.h"
+#include "zerogets.h"
+
 string bloodCmp(char bloodType[3])
 {
     char a[3] = "a ";
