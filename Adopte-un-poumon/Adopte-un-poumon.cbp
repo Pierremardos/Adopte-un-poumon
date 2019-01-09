@@ -55,7 +55,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions/Bloodtype_header.h" />
-		<Unit filename="functions/CPT_functions.cpp" />
+		<Unit filename="functions/CPT_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="functions/CPT_header.h" />
 		<Unit filename="functions/Graphical_functions.c">
 			<Option compilerVar="CC" />

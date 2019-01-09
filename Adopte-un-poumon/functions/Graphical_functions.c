@@ -210,8 +210,8 @@ void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWid
 void validate_connexion(GtkWidget *button_co,GtkWidget * second_window,GtkWidget * main_box,int argc,char **argv)
 {
 
-    GtkEntry login_co;
-    GtkEntry password_co;
+    GtkEntry *login_co;
+    GtkEntry *password_co;
     const gchar *login_connexion;
     const gchar *password_connexion;
     login_co = g_object_get_data (G_OBJECT(button_co), "login");
