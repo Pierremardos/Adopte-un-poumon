@@ -28,10 +28,9 @@ void addPatientStruct(string name,string surname, string birth, string dateInscr
 
 }
 
-string query()
+string query(patient p)
 {
-    addPatientStruct("jonas", "nizard", "1998-09-07","2019-01-1","175","60","o","","","0");
-    patient p;
+
     char request[600];
     char p1[160]="INSERT INTO patients (name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (";
     char comma[2] = ",";
@@ -60,14 +59,13 @@ string query()
 }
 void add(string request)
 {
-    struct patient p;
     MYSQL mysql;
     mysql_init(&mysql);
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
 
-        mysql_query(&mysql, query());
+        mysql_query(&mysql, request);
         mysql_close(&mysql);
     }
     else
@@ -126,7 +124,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 
 }
 
-void formPatient(GtkWidget * SecondWindow,GtkWidget * main_box)
+void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
 {
     GtkWidget * pFrame;
     GtkWidget * label;
@@ -159,7 +157,7 @@ void formPatient(GtkWidget * SecondWindow,GtkWidget * main_box)
     surname = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), surname, FALSE, FALSE, 0);
 
-    label = gtk_label_new("Date de naissance (JJ/bloodTypeMM/AAAA) :");
+    label = gtk_label_new("Date de naissance (JJ/MM/AAAA) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     birth = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), birth, FALSE, FALSE, 0);
@@ -184,19 +182,108 @@ void formPatient(GtkWidget * SecondWindow,GtkWidget * main_box)
     bloodType = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), bloodType, FALSE, FALSE, 0);
 
-    label = gtk_label_new("HLA (Mettez des espaces pour les séparer :");
+    label = gtk_label_new("HLA (Mettez des espaces pour les séparer) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    HLA = gtk_entry_new_with_max_length(3);
+    HLA = gtk_entry_new;
     gtk_box_pack_start(GTK_BOX(main_box), HLA, FALSE, FALSE, 0);
 
-    label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :");
+    label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :)");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    plasmapherese = gtk_entry_new_with_max_length(3);
+    plasmapherese = gtk_entry_new;
     gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, FALSE, FALSE, 0);
 
-    label = gtk_label_new("Fumeur :");
+    label = gtk_label_new("Fumeur : (1 ou 0) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    plasmapherese = gtk_entry_new_with_max_length(3);
-    gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, FALSE, FALSE, 0);
+    smoke = gtk_entry_new;
+    gtk_box_pack_start(GTK_BOX(main_box), smoke, FALSE, FALSE, 0);
+
+    button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight ,bloodType, HLA, plasmapherese, smoke);
+
+}
+
+void button_addPatient(GtkWidget * addPatientWindow, GtkWidget * main_box, GtkWidget * name, GtkWidget * surname, GtkWidget * birth, GtkWidget * dateInscription, GtkWidget * height, GtkWidget * weight ,GtkWidget * bloodType, GtkWidget * HLA, GtkWidget * plasmapherese, GtkWidget * smoke)
+{
+    GtkWidget * button_co;
+        /* Bouton avec un label */
+    button_co = gtk_button_new_with_label(" Ajoutez le patient ! ");
+
+
+    /* Connexion du signal "clicked" du bouton */
+
+    g_object_set_data(G_OBJECT(button_co), "name", name);
+    g_object_set_data(G_OBJECT(button_co), "surname", surname);
+    g_object_set_data(G_OBJECT(button_co), "birth", birth);
+    g_object_set_data(G_OBJECT(button_co), "dateInscription", dateInscription);
+    g_object_set_data(G_OBJECT(button_co), "height", height);
+    g_object_set_data(G_OBJECT(button_co), "weight", weight);
+    g_object_set_data(G_OBJECT(button_co), "bloodType", bloodType);
+    g_object_set_data(G_OBJECT(button_co), "HLA", HLA);
+    g_object_set_data(G_OBJECT(button_co), "plasmapherese", plasmapherese);
+    g_object_set_data(G_OBJECT(button_co), "smoke", smoke);
+
+
+    g_signal_connect(G_OBJECT(button_co), "clicked", G_CALLBACK(validate_addPatient), (GtkWidget*) addPatientWindow);
+
+    gtk_box_pack_start (GTK_BOX (main_box), button_co, FALSE, FALSE, 0);
+
+
+}
+
+
+void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWidget * main_box,int argc,char **argv)
+{
+
+    GtkEntry * name_;
+    GtkEntry * surname_;
+    GtkEntry * birth_;
+    GtkEntry * dateInscription_;
+    GtkEntry * height_;
+    GtkEntry * weight_;
+    GtkEntry * bloodType_;
+    GtkEntry * HLA_;
+    GtkEntry * plasmapherese_;
+    GtkEntry * smoke_;
+
+    const gchar * name;
+    const gchar * surname;
+    const gchar * birth;
+    const gchar * dateInscription;
+    const gchar * height;
+    const gchar * weight;
+    const gchar * bloodType;
+    const gchar * HLA;
+    const gchar * plasmapherese;
+    const gchar * smoke;
+    string request;
+
+
+    name_ = g_object_get_data (G_OBJECT(button_co), "name");
+    surname_ = g_object_get_data (G_OBJECT(button_co), "surname");
+    birth_ = g_object_get_data (G_OBJECT(button_co), "birth");
+    dateInscription_ = g_object_get_data (G_OBJECT(button_co), "dateInscription");
+    height_ = g_object_get_data (G_OBJECT(button_co), "height");
+    weight_ = g_object_get_data (G_OBJECT(button_co), "weight");
+    bloodType_ = g_object_get_data (G_OBJECT(button_co), "bloodType");
+    HLA_ = g_object_get_data (G_OBJECT(button_co), "HLA");
+    plasmapherese_ = g_object_get_data (G_OBJECT(button_co), "plasmapherese");
+    smoke_ = g_object_get_data (G_OBJECT(button_co), "smoke");
+
+    name = gtk_entry_get_text(name_);
+    surname = gtk_entry_get_text(surname_);
+    birth = gtk_entry_get_text(birth_);
+   dateInscription = gtk_entry_get_text(dateInscription_);
+    height = gtk_entry_get_text(height_);
+    weight = gtk_entry_get_text(weight_);
+    bloodType = gtk_entry_get_text(bloodType_);
+    HLA = gtk_entry_get_text(HLA_);
+    plasmapherese = gtk_entry_get_text(plasmapherese_);
+    smoke = gtk_entry_get_text(smoke_);
+
+
+
+    addPatientStruct( name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
+    patient p;
+    request = query(p);
+    add(request);
 
 }
