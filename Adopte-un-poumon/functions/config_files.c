@@ -13,7 +13,7 @@ void changes_files(GtkWidget * mainWindow)
     {
         fseek(open_file,0,SEEK_END);
         size =ftell(open_file);
-        printf("%d",size);
+        printf("%d \n",size);
         fseek(open_file,0,SEEK_SET);
         array = malloc(sizeof(char)*size);
         fread(array,sizeof(char),50,open_file);
