@@ -9,7 +9,7 @@
 #define EXEMPLE_3 2
 #include "Graphical_header.h"
 #include "addPatients_header.h"
-
+void firstWindow (GtkWidget *,int , char **,GtkWidget*,gchar*,gchar *);
 void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 {
     GtkWidget * ask_leave;

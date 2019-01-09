@@ -43,7 +43,7 @@
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
 
-1546534781 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547034442 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -51,13 +51,13 @@
 	<MYSQL/mysql.h>
 	"addPatients_header.h"
 
-1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547034251 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
-1546534781 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
+1547033685 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
-	"addPatients_header.h"
+	"Bloodtype_header.h"
 
 1546534781 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_functions.c
 	<stdio.h>
@@ -67,7 +67,7 @@
 
 1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
 
-1546534781 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547034351 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -75,15 +75,17 @@
 	<winsock.h>
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
+	"addPatients_header.h"
 
 1546533538 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1546534781 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\main.c
+1547034434 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\main.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
 	<winsock.h>
 	<MYSQL/mysql.h>
-	"functions/Graphical_header.h"
+
+1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_header.h
 
