@@ -406,19 +406,7 @@ void launch_program(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
 
 
 }
-/*
-int Hla(char  hla_test[3])
-{
-    if (strcmp(hla_test,"A2") == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return -1;
-    }
-}
-*/
+
 
 char * convert_text (gchar * text)
 {
