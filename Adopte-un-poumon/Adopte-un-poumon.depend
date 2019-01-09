@@ -48,7 +48,7 @@
 	"addPatients_header.h"
 	"config_files.h"
 
-1547058676 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547071998 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -58,7 +58,7 @@
 	"addPatients_header.h"
 	"zerogets.h"
 
-1547055290 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547071461 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
 1547043974 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
