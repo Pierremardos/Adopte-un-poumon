@@ -131,3 +131,9 @@
 
 1547052970 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
+1547052970 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
+
