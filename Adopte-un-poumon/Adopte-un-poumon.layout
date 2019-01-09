@@ -2,49 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-<<<<<<< HEAD
-	<File name="functions\addPatients_header.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="481" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="functions\Bloodtype_functions.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="578" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="functions\Graphical_header.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="107" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="functions\addPatient_functions.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5747" topLine="166" />
+			<Cursor1 position="7759" topLine="219" />
 		</Cursor>
 	</File>
-	<File name="functions\config_files.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="109" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="functions\Graphical_functions.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9644" topLine="303" />
-=======
-	<File name="functions\addPatient_functions.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6808" topLine="179" />
->>>>>>> a88dea8e08cedb5a3864a2fd442e261ddb0c1bf2
-		</Cursor>
-	</File>
-	<File name="functions\Graphical_functions.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-<<<<<<< HEAD
 			<Cursor1 position="0" topLine="0" />
-=======
-			<Cursor1 position="2080" topLine="0" />
->>>>>>> a88dea8e08cedb5a3864a2fd442e261ddb0c1bf2
+		</Cursor>
+	</File>
+	<File name="functions\Graphical_functions.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7438" topLine="327" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
