@@ -1,19 +1,21 @@
 # depslib dependency file v1.0
-1546534278 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547046228 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	<winsock.h>
 	<MYSQL/mysql.h>
 	"addPatients_header.h"
+	"zerogets.h"
 
-1546533788 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547046228 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
-1546534287 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
+1547046228 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
-	"addPatients_header.h"
+	"Bloodtype_header.h"
+	"zerogets.h"
 
 1546533788 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\cpt_functions.c
 	<stdio.h>
@@ -23,7 +25,7 @@
 
 1546533788 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
 
-1546533290 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\main.c
+1547046228 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\main.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -32,9 +34,9 @@
 	<MYSQL/mysql.h>
 	"functions/Graphical_header.h"
 
-1546533144 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547046228 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1546534311 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547046450 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -42,6 +44,7 @@
 	<winsock.h>
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
+	"addPatients_header.h"
 
 1547034442 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
@@ -88,4 +91,14 @@
 	<MYSQL/mysql.h>
 
 1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_header.h
+
+1547046228 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\zerogets.h
+
+1546533788 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_header.h
+
+1547046228 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\zerogets.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"zerogets.h"
 
