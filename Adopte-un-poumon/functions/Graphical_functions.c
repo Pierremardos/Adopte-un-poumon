@@ -12,19 +12,7 @@
 #include "config_files.h"
 
 
-void  impos/*
-int Hla(char  hla_test[3])
-{
-    if (strcmp(hla_test,"A2") == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return -1;
-    }
-}
-*/sible_open_file(GtkWidget * mainWindow)
+void  impossible_open_file(GtkWidget * mainWindow)
 {
     GtkWidget * dialog;
 

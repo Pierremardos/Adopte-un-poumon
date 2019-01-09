@@ -47,16 +47,17 @@
 	"addPatients_header.h"
 	"config_files.h"
 
-1547043867 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547054688 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	<winsock.h>
+	<gtk/gtk.h>
 	<MYSQL/mysql.h>
 	"addPatients_header.h"
 	"zerogets.h"
 
-1547043710 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547054605 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
 1547043974 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
@@ -84,7 +85,7 @@
 	"addPatients_header.h"
 	"config_files.h"
 
-1547052970 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547054391 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
 1547044241 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\main.c
 	<stdio.h>
