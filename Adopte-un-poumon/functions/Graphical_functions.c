@@ -462,5 +462,3 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     gtk_widget_show_all(MainWindow);
     gtk_main();
 }
-
-
