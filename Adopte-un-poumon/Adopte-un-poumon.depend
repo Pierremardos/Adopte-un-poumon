@@ -121,11 +121,12 @@
 
 1547051515 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547051767 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547056645 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
+	"config_files.h"
 
 1547051767 449a3a022bf97c0d7e81830d10753cc50e0f5
 

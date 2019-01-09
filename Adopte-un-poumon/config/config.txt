@@ -1,2 +1,3 @@
-path_image="test.png"
+path_image=test.png
 test=test
+size_main_window=700
