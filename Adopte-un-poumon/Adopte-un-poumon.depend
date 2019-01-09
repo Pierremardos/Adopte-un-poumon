@@ -34,9 +34,9 @@
 	<MYSQL/mysql.h>
 	"functions/Graphical_header.h"
 
-1547046228 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547050473 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547046450 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547052117 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -45,6 +45,7 @@
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
 	"addPatients_header.h"
+	"config_files.h"
 
 1547034442 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
@@ -101,4 +102,12 @@
 	<string.h>
 	<stdlib.h>
 	"zerogets.h"
+
+1547051515 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
+
+1547051767 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+	<stdio.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<string.h>
 

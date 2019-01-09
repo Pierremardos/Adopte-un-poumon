@@ -18,6 +18,11 @@ void main_program(int argc, char ** argv);
 void display_error_message(GtkWidget * second_window,GtkWidget * main_box);
 void toolbar_window(GtkWidget * window,GtkWidget * main_box);
 void leave (gpointer , guint ,GtkWidget *);
+void button_change_files(GtkWidget *,GtkWidget *, gint);
+void changes_files(GtkWidget *);
+void impossible_open_file(GtkWidget *);
+
+
 
 
 

@@ -9,7 +9,42 @@
 #define EXEMPLE_3 2
 #include "Graphical_header.h"
 #include "addPatients_header.h"
+#include "config_files.h"
 
+
+void  impossible_open_file(GtkWidget * mainWindow)
+{
+    GtkWidget * dialog;
+
+dialog = gtk_message_dialog_new (mainWindow,
+                                 GTK_DIALOG_DESTROY_WITH_PARENT,
+                                 GTK_MESSAGE_ERROR,
+                                 GTK_BUTTONS_CLOSE,
+                                 "Impossible d'ouvrir le fichier de configuration : "
+                                 );
+gtk_dialog_run (GTK_DIALOG (dialog));
+gtk_widget_destroy (dialog);
+}
+
+void button_change_files(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
+{
+    GtkWidget * button;
+    switch(iExemple)
+    {
+    default:
+    case EXEMPLE_3:
+        /* Bouton avec un label */
+        button = gtk_button_new_with_label("Modifier le fichier de configuration");
+        break;
+
+    }
+    /* Connexion du signal "clicked" du bouton */
+    g_signal_connect_swapped(G_OBJECT(button), "clicked", G_CALLBACK(changes_files),(GtkWidget*) mainWindow );
+
+    gtk_box_pack_end  (GTK_BOX (main_box), button, TRUE, FALSE, 0);
+
+
+}
 void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 {
     GtkWidget * ask_leave;
@@ -275,7 +310,7 @@ void connexion(GtkWidget * SecondWindow,GtkWidget * main_box)
 
 
     label = gtk_label_new("Password :");
-    gtk_box_pack_start(GTK_BOX(main_box), label, TRUE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     /* Creation du GtkEntry avec 8 caracteres maximum */
     password = gtk_entry_new_with_max_length(8);
 
@@ -285,7 +320,7 @@ void connexion(GtkWidget * SecondWindow,GtkWidget * main_box)
     /* Modification du caractere affiche */
     gtk_entry_set_invisible_char(GTK_ENTRY(password), '*');
     /* Insertion du GtkEntry dans la GtkVBox */
-    gtk_box_pack_start(GTK_BOX(main_box), password, TRUE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), password, FALSE, FALSE, 0);
 
     button_connexion(SecondWindow,main_box,EXEMPLE_3,login,password);
 
@@ -445,7 +480,7 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     gtk_window_unmaximize(GTK_WINDOW(MainWindow));
 
     /* Création de la GtkBox verticale */
-    main_box = gtk_vbox_new(TRUE, 0);
+    main_box = gtk_vbox_new(TRUE, -50);
     /* Ajout de la GtkVBox dans la fenetre */
     gtk_container_add(GTK_CONTAINER(MainWindow), main_box);
 
@@ -453,11 +488,14 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     // CREATION DU PREMIER LABEL DE LA FENETRE
     creation_label(MainWindow,mainLabel,convert_mainLabel,positionLabel,main_box);
 
-
+    // Affichage image du milieu
     first_image(MainWindow,main_box,path_image);
 
+    // BOUTON QUI PERMET DE LANCER LE PROGRAMME
     launch_program(MainWindow,main_box,EXEMPLE_3);
 
+    // BOUTON CONFIGURATION FICHIER
+    button_change_files(MainWindow,main_box,EXEMPLE_3);
 
     gtk_widget_show_all(MainWindow);
     gtk_main();
