@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <winsock.h>
+#include <gtk/gtk.h>
 #include <MYSQL/mysql.h>
 #include "addPatients_header.h"
 #include "zerogets.h"
@@ -74,4 +75,53 @@ void add(string request)
         printf("Erreur connexion");
 
     }
+}
+/*----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------Passage Graphique -----------------------------
+------------------------------------------------------------------------------------------*/
+
+void addPatientStructWindow(int argc, char ** argv,GtkWidget * mainWindow)
+{
+    GtkWidget * main_box = NULL;
+    GtkWidget * SecondWindow=NULL;
+
+    /* Initialisation de GTK+ */
+    gtk_init(&argc, &argv);
+
+    /* Création de la fenêtre */
+    SecondWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    g_signal_connect(G_OBJECT(SecondWindow), "delete-event", G_CALLBACK(gtk_main_quit), NULL);
+
+    /* Affichage et boucle évènementielle */
+    gtk_widget_show(SecondWindow);
+
+    /* On definit le titre de la fenêtre */
+    gtk_window_set_title(GTK_WINDOW(SecondWindow), "Connexion :");
+
+    /* Définition de la position */
+    gtk_window_set_position(GTK_WINDOW(SecondWindow), GTK_WIN_POS_CENTER_ALWAYS  );
+
+    /* Définition d'un icone de la fenêtre */
+    gtk_window_set_icon_from_file(GTK_WINDOW(SecondWindow),"organes.jpg",NULL);
+
+    /* On définit la taile de la fenêtre par défault */
+    gtk_window_resize(GTK_WINDOW(SecondWindow), 500,500);
+
+    /* Maximiser la fenêtre */
+    gtk_window_maximize (GTK_WINDOW(SecondWindow));
+
+    /* Restaurer la fenetre */
+    gtk_window_unmaximize(GTK_WINDOW(SecondWindow));
+
+    /* Création de la GtkBox verticale */
+    main_box = gtk_vbox_new(TRUE, 0);
+    /* Ajout de la GtkVBox dans la fenetre */
+    gtk_container_add(GTK_CONTAINER(SecondWindow), main_box);
+    connexion(SecondWindow,main_box);
+
+    gtk_widget_show_all(SecondWindow);
+    gtk_main();
+
+
 }
