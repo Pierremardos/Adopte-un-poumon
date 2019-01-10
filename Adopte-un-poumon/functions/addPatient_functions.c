@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <winsock.h>
+
 #include <gtk/gtk.h>
+
+#include <winsock.h>
 #include <MYSQL/mysql.h>
+
 #include "addPatients_header.h"
 #include "zerogets.h"
 
 
 
 
-void addPatientStruct(string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
+void addPatientStruct(patient * p,string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
 {
-    patient * p;
     p->name = name;
     p->surname = surname;
     p->birth = birth;
@@ -34,39 +36,63 @@ string query(patient * p)
 {
 
     char request[600];
-    char p1[160]="INSERT INTO patients (name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (";
+    char p1[200]="INSERT INTO patients (`id`,`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `bloodType`, `HLA`, `plasmapherese`, `smoke`) VALUES (''";
     char comma[2] = ",";
     char p2[2] = ")";
+    char hop[2] = "'";
     strcpy(request, p1);
+    strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->name);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->surname);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->birth);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->dateInscription);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->height);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->weight);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->bloodType);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->HLA);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->plasmapherese);
+    strcat(request,hop);
     strcat(request,comma);
+    strcat(request,hop);
     strcat(request,p->smoke);
+    strcat(request,hop);
+    strcat(request,p2);
+    printf(request);
     return (request);
 }
 void add(string request)
 {
+
     MYSQL mysql;
     mysql_init(&mysql);
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
-    if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
+    if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
-
         mysql_query(&mysql, request);
         mysql_close(&mysql);
     }
@@ -287,9 +313,8 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     plasmapherese = gtk_entry_get_text(plasmapherese_);
     smoke = gtk_entry_get_text(smoke_);
 
-
-    addPatientStruct( name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
     patient * p;
+    addPatientStruct(&p,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
     request = query(&p);
     add(request);
 
