@@ -36,7 +36,7 @@ string query(patient * p)
 {
 
     char request[600];
-    char p1[200]="INSERT INTO patients (`id`,`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `bloodType`, `HLA`, `plasmapherese`, `smoke`) VALUES (''";
+    char p1[200]="INSERT INTO patients (id,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (''";
     char comma[2] = ",";
     char p2[2] = ")";
     char hop[2] = "'";
@@ -82,17 +82,18 @@ string query(patient * p)
     strcat(request,p->smoke);
     strcat(request,hop);
     strcat(request,p2);
-    printf(request);
+
     return (request);
 }
 void add(string request)
 {
-
+    printf(request);
     MYSQL mysql;
     mysql_init(&mysql);
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
+
         mysql_query(&mysql, request);
         mysql_close(&mysql);
     }
@@ -319,4 +320,3 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     add(request);
 
 }
-

@@ -187,6 +187,7 @@ void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWid
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
+
         char query[500];
         //Requête qui sélectionne tout dans ma table scores
 
