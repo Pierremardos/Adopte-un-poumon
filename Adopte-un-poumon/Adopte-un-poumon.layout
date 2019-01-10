@@ -2,34 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-<<<<<<< HEAD
-	<File name="functions\addPatient_functions.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="functions\config_files.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6533" topLine="186" />
-=======
-	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
->>>>>>> 911716637a3c83dbac957571b67fbc18b332c273
+			<Cursor1 position="1450" topLine="25" />
 		</Cursor>
 	</File>
-	<File name="functions\addPatients_header.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="functions\addPatient_functions.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-<<<<<<< HEAD
-			<Cursor1 position="0" topLine="3" />
-=======
-			<Cursor1 position="720" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="functions\addPatient_functions.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10333" topLine="261" />
-		</Cursor>
-	</File>
-	<File name="functions\Graphical_functions.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10075" topLine="454" />
->>>>>>> 911716637a3c83dbac957571b67fbc18b332c273
+			<Cursor1 position="699" topLine="51" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -26,6 +26,8 @@ void addPatientStruct(string name,string surname, string birth, string dateInscr
 
 
 
+
+
 }
 
 string query(patient * p)
