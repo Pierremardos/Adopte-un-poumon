@@ -147,6 +147,7 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
 
 
     /* Creation et insertion des elements contenus dans le premier GtkFrame */
+
     label = gtk_label_new("Nom :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     name = gtk_entry_new();
@@ -155,47 +156,55 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
     label = gtk_label_new("Prenom :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     surname = gtk_entry_new();
-    gtk_box_pack_start(GTK_BOX(main_box), surname, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), surname, TRUE, TRUE, 0);
 
     label = gtk_label_new("Date de naissance (JJ/MM/AAAA) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     birth = gtk_entry_new();
-    gtk_box_pack_start(GTK_BOX(main_box), birth, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), birth, TRUE, TRUE, 0);
+
 
     label = gtk_label_new("Date d'inscription (JJ/MM/AAAA) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     dateInscription = gtk_entry_new();
-    gtk_box_pack_start(GTK_BOX(main_box), dateInscription, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), dateInscription, TRUE, TRUE, 0);
 
     label = gtk_label_new("Taille (en cm) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     height = gtk_entry_new();
-    gtk_box_pack_start(GTK_BOX(main_box), height, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), height, TRUE, TRUE, 0);
+
+
 
     label = gtk_label_new("Poids (en kg) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     weight = gtk_entry_new();
-    gtk_box_pack_start(GTK_BOX(main_box), weight, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), weight, TRUE, TRUE, 0);
+
 
     label = gtk_label_new("Groupe Sanguin :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     bloodType = gtk_entry_new_with_max_length(3);
-    gtk_box_pack_start(GTK_BOX(main_box), bloodType, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), bloodType, TRUE, TRUE, 0);
 
+/*
     label = gtk_label_new("HLA (Mettez des espaces pour les séparer) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     HLA = gtk_entry_new;
-    gtk_box_pack_start(GTK_BOX(main_box), HLA, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), HLA, TRUE, TRUE, 0);
 
     label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :)");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     plasmapherese = gtk_entry_new;
-    gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, TRUE, TRUE, 0);
+
 
     label = gtk_label_new("Fumeur : (1 ou 0) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     smoke = gtk_entry_new;
-    gtk_box_pack_start(GTK_BOX(main_box), smoke, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(main_box), smoke, TRUE, TRUE, 0); */
+
+
 
     button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight ,bloodType, HLA, plasmapherese, smoke);
 
@@ -280,10 +289,10 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     smoke = gtk_entry_get_text(smoke_);
 
 
-
     addPatientStruct( name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
     patient p;
     request = query(p);
     add(request);
 
 }
+
