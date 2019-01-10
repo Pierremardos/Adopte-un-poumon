@@ -12,23 +12,23 @@
 
 void addPatientStruct(string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
 {
-    patient p;
-    p.name = name;
-    p.surname = surname;
-    p.birth = birth;
-    p.dateInscription = dateInscription;
-    p.height = height;
-    p.weight = weight;
-    p.bloodType = bloodType;
-    p.HLA = HLA;
-    p.plasmapherese = plasmapherese;
-    p.smoke = smoke;
+    patient * p;
+    p->name = name;
+    p->surname = surname;
+    p->birth = birth;
+    p->dateInscription = dateInscription;
+    p->height = height;
+    p->weight = weight;
+    p->bloodType = bloodType;
+    p->HLA = HLA;
+    p->plasmapherese = plasmapherese;
+    p->smoke = smoke;
 
 
 
 }
 
-string query(patient p)
+string query(patient * p)
 {
 
     char request[600];
@@ -36,25 +36,25 @@ string query(patient p)
     char comma[2] = ",";
     char p2[2] = ")";
     strcpy(request, p1);
-    strcat(request,p.name);
+    strcat(request,p->name);
     strcat(request,comma);
-    strcat(request,p.surname);
+    strcat(request,p->surname);
     strcat(request,comma);
-    strcat(request,p.birth);
+    strcat(request,p->birth);
     strcat(request,comma);
-    strcat(request,p.dateInscription);
+    strcat(request,p->dateInscription);
     strcat(request,comma);
-    strcat(request,p.height);
+    strcat(request,p->height);
     strcat(request,comma);
-    strcat(request,p.weight);
+    strcat(request,p->weight);
     strcat(request,comma);
-    strcat(request,p.bloodType);
+    strcat(request,p->bloodType);
     strcat(request,comma);
-    strcat(request,p.HLA);
+    strcat(request,p->HLA);
     strcat(request,comma);
-    strcat(request,p.plasmapherese);
+    strcat(request,p->plasmapherese);
     strcat(request,comma);
-    strcat(request,p.smoke);
+    strcat(request,p->smoke);
     return (request);
 }
 void add(string request)
@@ -187,24 +187,21 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
     bloodType = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), bloodType, TRUE, TRUE, 0);
 
-/*
+
     label = gtk_label_new("HLA (Mettez des espaces pour les séparer) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    HLA = gtk_entry_new;
+    HLA = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), HLA, TRUE, TRUE, 0);
 
     label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :)");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    plasmapherese = gtk_entry_new;
+    plasmapherese = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, TRUE, TRUE, 0);
-
 
     label = gtk_label_new("Fumeur : (1 ou 0) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    smoke = gtk_entry_new;
-    gtk_box_pack_start(GTK_BOX(main_box), smoke, TRUE, TRUE, 0); */
-
-
+    smoke = gtk_entry_new_with_max_length(3);
+    gtk_box_pack_start(GTK_BOX(main_box), smoke, TRUE, TRUE, 0);
 
     button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight ,bloodType, HLA, plasmapherese, smoke);
 
@@ -290,8 +287,8 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
 
 
     addPatientStruct( name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
-    patient p;
-    request = query(p);
+    patient * p;
+    request = query(&p);
     add(request);
 
 }
