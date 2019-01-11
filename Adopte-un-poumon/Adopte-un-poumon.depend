@@ -48,7 +48,7 @@
 	"addPatients_header.h"
 	"config_files.h"
 
-1547130119 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547134602 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -140,4 +140,16 @@
 	<gtk/gtk.h>
 	<string.h>
 	"config_files.h"
+
+1547211562 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+	"comparePatient.h"
+	"zerogets.h"
+
+1547137734 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 
