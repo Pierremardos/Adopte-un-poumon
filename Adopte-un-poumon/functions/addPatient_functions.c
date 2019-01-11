@@ -25,21 +25,21 @@ void addPatientStruct(patient * p,string name,string surname, string birth, stri
     p->HLA = HLA;
     p->plasmapherese = plasmapherese;
     p->smoke = smoke;
-
-
-
-
-
 }
 
 string query(patient * p)
 {
 
-    char request[600];
-    char p1[200]="INSERT INTO patients (id,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (''";
-    char comma[2] = ",";
-    char p2[2] = ")";
-    char hop[2] = "'";
+    char request[1000];
+    char max_id[200];
+    static id=1;
+
+
+    // char p1[200]="INSERT INTO patients (id,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (''";
+    //char comma[2] = ",";
+    //char p2[2] = ")";
+    // char hop[2] = "'";
+    /*
     strcpy(request, p1);
     strcat(request,comma);
     strcat(request,hop);
@@ -82,6 +82,25 @@ string query(patient * p)
     strcat(request,p->smoke);
     strcat(request,hop);
     strcat(request,p2);
+
+    */
+
+    MYSQL mysql;
+    mysql_init(&mysql);
+    mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
+    if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
+    {
+        sprintf(request,"INSERT INTO patients VALUES ('%d','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",id,p->name,p->surname,p->birth,p->dateInscription,p->height,p->weight,p->bloodType,p->HLA,p->plasmapherese,p->smoke);
+        id++;
+        mysql_query(&mysql, request);
+        mysql_close(&mysql);
+
+    }
+    else
+    {
+        printf("Erreur connexion");
+
+    }
 
     return (request);
 }
@@ -232,14 +251,14 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
     smoke = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), smoke, TRUE, TRUE, 0);
 
-    button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight ,bloodType, HLA, plasmapherese, smoke);
+    button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight,bloodType, HLA, plasmapherese, smoke);
 
 }
 
-void button_addPatient(GtkWidget * addPatientWindow, GtkWidget * main_box, GtkWidget * name, GtkWidget * surname, GtkWidget * birth, GtkWidget * dateInscription, GtkWidget * height, GtkWidget * weight ,GtkWidget * bloodType, GtkWidget * HLA, GtkWidget * plasmapherese, GtkWidget * smoke)
+void button_addPatient(GtkWidget * addPatientWindow, GtkWidget * main_box, GtkWidget * name, GtkWidget * surname, GtkWidget * birth, GtkWidget * dateInscription, GtkWidget * height, GtkWidget * weight,GtkWidget * bloodType, GtkWidget * HLA, GtkWidget * plasmapherese, GtkWidget * smoke)
 {
     GtkWidget * button_co;
-        /* Bouton avec un label */
+    /* Bouton avec un label */
     button_co = gtk_button_new_with_label(" Ajoutez le patient ! ");
 
 
@@ -306,7 +325,7 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     name = gtk_entry_get_text(name_);
     surname = gtk_entry_get_text(surname_);
     birth = gtk_entry_get_text(birth_);
-   dateInscription = gtk_entry_get_text(dateInscription_);
+    dateInscription = gtk_entry_get_text(dateInscription_);
     height = gtk_entry_get_text(height_);
     weight = gtk_entry_get_text(weight_);
     bloodType = gtk_entry_get_text(bloodType_);
@@ -317,6 +336,6 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     patient * p;
     addPatientStruct(&p,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
     request = query(&p);
-    add(request);
+    // add(request);
 
 }
