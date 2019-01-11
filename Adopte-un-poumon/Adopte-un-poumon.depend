@@ -48,7 +48,7 @@
 	"addPatients_header.h"
 	"config_files.h"
 
-1547134602 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547218073 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -109,7 +109,7 @@
 	<stdlib.h>
 	"zerogets.h"
 
-1547046228 D
+1547211500 D
 
 1547043803 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\zerogets.h
 
@@ -134,18 +134,18 @@
 
 1547052970 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547112488 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547217716 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
 	"config_files.h"
 
-<<<<<<< HEAD
 1547211562 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
-=======
+
 1547211500 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
->>>>>>> 3f78ef2d7513cc92129a7d9c3d2cb2016a5872b6
+
+1547211188 8ef2d7513cc92129a7d9c3d2cb2016a5872b6
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -155,9 +155,7 @@
 	"comparePatient.h"
 	"zerogets.h"
 
-<<<<<<< HEAD
 1547137734 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
-=======
+
 1547211188 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
->>>>>>> 3f78ef2d7513cc92129a7d9c3d2cb2016a5872b6
 
