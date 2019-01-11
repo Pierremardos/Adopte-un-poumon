@@ -63,6 +63,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions/Graphical_header.h" />
+		<Unit filename="functions/addLungs_fonctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/addLungs_fonctions.h" />
 		<Unit filename="functions/addPatient_functions.c">
 			<Option compilerVar="CC" />
 		</Unit>

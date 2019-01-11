@@ -31,59 +31,7 @@ string query(patient * p)
 {
 
     char request[1000];
-    char max_id[200];
     static id=1;
-
-
-    // char p1[200]="INSERT INTO patients (id,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke) VALUES (''";
-    //char comma[2] = ",";
-    //char p2[2] = ")";
-    // char hop[2] = "'";
-    /*
-    strcpy(request, p1);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->name);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->surname);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->birth);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->dateInscription);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->height);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->weight);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->bloodType);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->HLA);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->plasmapherese);
-    strcat(request,hop);
-    strcat(request,comma);
-    strcat(request,hop);
-    strcat(request,p->smoke);
-    strcat(request,hop);
-    strcat(request,p2);
-
-    */
 
     MYSQL mysql;
     mysql_init(&mysql);

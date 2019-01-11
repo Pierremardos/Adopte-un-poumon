@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547216257 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547224158 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -9,7 +9,7 @@
 	"addPatients_header.h"
 	"zerogets.h"
 
-1547136997 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547224697 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
 1547046228 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
@@ -37,7 +37,7 @@
 
 1547058296 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547136997 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547224771 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -47,6 +47,7 @@
 	"Graphical_header.h"
 	"addPatients_header.h"
 	"config_files.h"
+	"addLungs_fonctions.h"
 
 1547218073 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
@@ -158,4 +159,17 @@
 1547137734 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 
 1547211188 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
+
+1547224978 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+	"addPatients_header.h"
+	"zerogets.h"
+	"addLungs_fonctions.h"
+
+1547226861 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
 
