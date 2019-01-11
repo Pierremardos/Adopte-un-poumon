@@ -10,19 +10,21 @@ void changes_files(GtkWidget * mainWindow)
     char * find_equal;
     char * pathimage;
     char * sizeWindow;
+    char * test;
     int actual_carac = 0;
     int cursor=0;
     int counter=0;
     int i=0;
     FILE* open_file;
     int size=0;
-    char test[50];
     open_file = fopen("config/config.txt","r+");
     if (open_file !=NULL)
     {
         find_equal = malloc(sizeof(char)* 50);
         pathimage = malloc(sizeof(char)* 50);
         sizeWindow = malloc(sizeof(char)* 50);
+        test = malloc(sizeof(char)* 50);
+
 
 
         while ( fgets ( line, sizeof(line), open_file ) != NULL ) // LIS LE FICHIER LIGNE PAR LIGNE
@@ -33,26 +35,17 @@ void changes_files(GtkWidget * mainWindow)
             cursor = ftell(open_file);
             // printf("%d",cursor);
             find_equal = strstr(line,"=")+1;
-            if (counter == 0)
-            {
-            strcpy(test,find_equal);
-            }
-              if (counter == 1)
-            {
-            strcpy(pathimage,find_equal);
-            }
-              if (counter == 2)
-            {
-            strcpy(sizeWindow,find_equal);
-            }
-            counter++;
-            puts(test);
-            puts(pathimage);
+
+
+            sscanf( find_equal, "%s %s %s", pathimage, sizeWindow,test );
+            //puts(pathimage);
+            sscanf(pathimage,"%s %s %s",pathimage,sizeWindow,test);
             puts(sizeWindow);
 
 
 
         }
+
         fclose( open_file );
         free(find_equal);
     }

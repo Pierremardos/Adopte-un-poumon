@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1547086361 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547136997 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
-	<winsock.h>
 	<gtk/gtk.h>
+	<winsock.h>
 	<MYSQL/mysql.h>
 	"addPatients_header.h"
 	"zerogets.h"
 
-1547077345 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547136997 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
 1547046228 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
@@ -37,7 +37,7 @@
 
 1547058296 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547058296 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547136997 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
