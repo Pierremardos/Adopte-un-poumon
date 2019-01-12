@@ -13,8 +13,6 @@
 #include "addLungs_fonctions.h"
 
 
-
-
 void addLungsStruct(lung * lung_comparate,string last_name,string first_name, string sex, string old,string blood_type, string height, string weight, string hla, string plasmapherese, string smoke,string enter_bloc,string clamping,string notes)
 {
     lung_comparate->last_name = last_name;
@@ -30,11 +28,7 @@ void addLungsStruct(lung * lung_comparate,string last_name,string first_name, st
     lung_comparate->enter_bloc = enter_bloc;
     lung_comparate->clamping = clamping;
     lung_comparate->notes = notes;
-
-
-
 }
-
 
 void validate_addLungs(GtkWidget *button_co,GtkWidget * addLungsWindow,GtkWidget * main_box,int argc,char **argv)
 {
@@ -98,8 +92,10 @@ void validate_addLungs(GtkWidget *button_co,GtkWidget * addLungsWindow,GtkWidget
     notes = gtk_entry_get_text(notes_);
 
 
-    lung * lung_comparate;
+    lung lung_comparate;
     addLungsStruct(&lung_comparate,last_name, first_name, sex, old,blood_type, height, weight, hla, plasmapherese, smoke,enter_bloc,clamping,notes);
+    compare_bloodType(&lung_comparate);
+
 }
 
 

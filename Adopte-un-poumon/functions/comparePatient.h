@@ -5,20 +5,15 @@
 typedef char* string;
 
 typedef struct patient patient;
-//Structures
-struct patient
-{
-    string name;
-    string surname;
-    string birth;
-    string dateInscription;
-    string height;
-    string weight;
-    string bloodType;
-    string HLA;
-    string plasmapherese;
-    string smoke;
-};
+typedef struct lung lung;
+
+
+
 // Prototype
+void close_mysql(string);
+void connexion_mysql();
+void compare_bloodType(lung *);
+
+
 
 
