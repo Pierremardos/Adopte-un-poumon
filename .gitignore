@@ -25,5 +25,10 @@ Adopte-un-poumon/Adopte-un-poumon.layout
 *.depend
 *.layout
 *.layout
+<<<<<<< HEAD
 *.depend
 *.layout
+=======
+*.o
+*.depend
+>>>>>>> caea4389dd5e4f76450fff4c389c098f897f7546

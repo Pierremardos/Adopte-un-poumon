@@ -37,28 +37,19 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
             cursor = ftell(open_file);
 
             find_equal = strstr(line,"=")+1;
-            printf("Le curseur est a : %d \n",cursor);
             counter++;
-
-            printf("Ligne num�ro : %d\n",counter);
-            puts(find_equal);
-
-
 
             switch(counter)
             {
             case 1 :
                 strcpy(pathImage, find_equal);
-                puts(pathImage);
                 break;
             case 2 :
                 strcpy(width, find_equal);
-                puts(width);
                 intWidht =  atoi(width);
                 break;
             case 3 :
                 strcpy(height, find_equal);
-                puts(height);
                 intHeight = atoi(height);
                 break;
             default:
@@ -71,8 +62,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 
 
         }
-        addConfigStruct(&configStruct, pathImage, intWidht, intHeight);
-        printf("%d",configStruct->height);
+        addConfigStruct(configStruct, pathImage, intWidht, intHeight);
         free(find_equal);
         free(pathImage);
         free(width);
@@ -89,8 +79,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 
 void addConfigStruct(config * configStruct, string pathImage,int width, int height)
 {
-    configStruct-> pathImage = pathImage;
+    configStruct->pathImage = pathImage;
     configStruct->width = width;
     configStruct->height = height;
-
 }

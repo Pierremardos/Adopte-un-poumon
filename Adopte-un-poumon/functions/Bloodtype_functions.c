@@ -6,32 +6,38 @@
 
 string bloodCmp(char bloodType[3])
 {
-    char a[3] = "a ";
-    char b[3] = "b ";
-    char o[3] = "o ";
-    char ab[3] = "ab";
+    char a[5] = "'a'";
+    char b[5] = "'b'";
+    char o[5] = "'o'";
+    char ab[5] = "'ab'";
+    char and[10] = " AND ";
     string result;
 
     if (!strcmp(bloodType, "a")&& strlen(bloodType)==1)
     {
-        result = malloc(5*sizeof(char));
+        result = malloc(20*sizeof(char));
         strcpy(result, a);
+        strcat(result, and);
         strcat(result, o);
         return result;
     }
     else if (!strcmp(bloodType,"b")&& strlen(bloodType)==1)
     {
-        result = malloc(5*sizeof(char));
+        result = malloc(20*sizeof(char));
         strcpy(result, b);
+        strcat(result, and);
         strcat(result, o);
         return result;
     }
     else if (!strcmp(bloodType,"o")&& strlen(bloodType)==1)
     {
-        result = malloc(9*sizeof(char));
+        result = malloc(20*sizeof(char));
         strcpy(result, a);
+        strcat(result, and);
         strcat(result, b);
+        strcat(result, and);
         strcat(result, ab);
+        strcat(result, and);
         strcat(result, o);
         return result;
 
