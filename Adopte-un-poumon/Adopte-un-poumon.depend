@@ -76,7 +76,7 @@
 
 1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
 
-1547293341 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547295330 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -136,12 +136,13 @@
 
 1547248984 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547290324 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547295413 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
 	"config_files.h"
+	"Graphical_header.h"
 
 1547211562 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 

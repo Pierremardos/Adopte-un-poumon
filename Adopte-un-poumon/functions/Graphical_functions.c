@@ -13,19 +13,6 @@
 #include "addLungs_fonctions.h"
 
 
-void  impossible_open_file(GtkWidget * mainWindow)
-{
-    GtkWidget * dialog;
-
-dialog = gtk_message_dialog_new (mainWindow,
-                                 GTK_DIALOG_DESTROY_WITH_PARENT,
-                                 GTK_MESSAGE_ERROR,
-                                 GTK_BUTTONS_CLOSE,
-                                 "Impossible d'ouvrir le fichier de configuration : "
-                                 );
-gtk_dialog_run (GTK_DIALOG (dialog));
-gtk_widget_destroy (dialog);
-}
 
 void button_change_files(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
 {

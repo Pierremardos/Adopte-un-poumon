@@ -3,14 +3,16 @@
 #include <gtk/gtk.h>
 #include <string.h>
 #include "config_files.h"
+#include "Graphical_header.h"
+
 void changes_files(GtkWidget * mainWindow)
 {
     char line [100]; // Maximum de caractere sur une line
-    char * array;
-    char * find_equal;
-    char * pathimage;
-    char * sizeWindow;
-    char * test;
+    string array;
+    string find_equal;
+    string pathimage;
+    string sizeWindow;
+    string test;
     int actual_carac = 0, cursor=0, counter=0, i=0, size=0;
 
 
@@ -25,7 +27,7 @@ void changes_files(GtkWidget * mainWindow)
         find_equal = malloc(sizeof(char)* 100);
         pathimage = malloc(sizeof(char)* 100);
         sizeWindow = malloc(sizeof(char)* 100);
-        test = malloc(sizeof(char)* 50);
+        test = malloc(sizeof(char)* 100);
 
 
 
@@ -59,12 +61,13 @@ void changes_files(GtkWidget * mainWindow)
                 sizeWindow = find_equal;
                 puts(sizeWindow);
                 break;
+            default:
+                impossible_change_file(mainWindow);
 
             }
-        }
         puts(pathimage);
-        puts(test);
-        puts(sizeWindow);
+
+        }
 
 
         fclose( open_file );
