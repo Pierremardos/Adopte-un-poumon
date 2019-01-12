@@ -79,6 +79,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions/config_files.h" />
+		<Unit filename="functions/erreur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/erreur.h" />
 		<Unit filename="functions/zerogets.c">
 			<Option compilerVar="CC" />
 		</Unit>

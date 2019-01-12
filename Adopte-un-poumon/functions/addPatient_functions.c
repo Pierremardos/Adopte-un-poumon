@@ -25,13 +25,15 @@ void addPatientStruct(patient * p,string name,string surname, string birth, stri
     p->HLA = HLA;
     p->plasmapherese = plasmapherese;
     p->smoke = smoke;
+
+
 }
 
 string query(patient * p)
 {
 
     char request[1000];
-    static id=1;
+    static id=5;
 
     MYSQL mysql;
     mysql_init(&mysql);
@@ -54,6 +56,7 @@ string query(patient * p)
 }
 void add(string request)
 {
+
     printf(request);
     MYSQL mysql;
     mysql_init(&mysql);
