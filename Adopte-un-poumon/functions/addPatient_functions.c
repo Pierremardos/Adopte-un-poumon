@@ -9,12 +9,26 @@
 
 #include "addPatients_header.h"
 #include "zerogets.h"
+#include "config_files.h"
 
 
 
 
-void addPatientStruct(patient * p,string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
+void addPatientStruct(patient * patientStruct,string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
 {
+<<<<<<< HEAD
+    patientStruct->name = name;
+    patientStruct->surname = surname;
+    patientStruct->birth = birth;
+    patientStruct->dateInscription = dateInscription;
+    patientStruct->height = height;
+    patientStruct->weight = weight;
+    patientStruct->bloodType = bloodType;
+    patientStruct->HLA = HLA;
+    patientStruct->plasmapherese = plasmapherese;
+    patientStruct->smoke = smoke;
+    puts(patientStruct->name);
+=======
     p->name = name;
     p->surname = surname;
     p->birth = birth;
@@ -27,21 +41,26 @@ void addPatientStruct(patient * p,string name,string surname, string birth, stri
     p->smoke = smoke;
 
 
+>>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
 }
 
-string query(patient * p)
+void query(patient * p)
 {
-
     char request[1000];
+<<<<<<< HEAD
+    //variable maudide
+    //int boui[200];
+
+=======
     static id=5;
+>>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
 
     MYSQL mysql;
     mysql_init(&mysql);
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
-        sprintf(request,"INSERT INTO patients VALUES ('%d','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",id,p->name,p->surname,p->birth,p->dateInscription,p->height,p->weight,p->bloodType,p->HLA,p->plasmapherese,p->smoke);
-        id++;
+        sprintf(request,"INSERT INTO patients VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",p->name,p->surname,p->birth,p->dateInscription,p->height,p->weight,p->bloodType,p->HLA,p->plasmapherese,p->smoke);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
 
@@ -51,9 +70,9 @@ string query(patient * p)
         printf("Erreur connexion");
 
     }
-
-    return (request);
 }
+<<<<<<< HEAD
+=======
 void add(string request)
 {
 
@@ -70,9 +89,8 @@ void add(string request)
     else
     {
         printf("Erreur connexion");
+>>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
 
-    }
-}
 /*----------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 ------------------------------------------Passage Graphique ------------------------------
@@ -82,6 +100,11 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 {
     GtkWidget * main_box = NULL;
     GtkWidget * patientAddWindow=NULL;
+    //config * configStruct;
+
+    //recuperation dans le fichier config
+    //changes_files(mainWindow, configStruct);
+
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
@@ -103,7 +126,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organes.jpg",NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
-    gtk_window_resize(GTK_WINDOW(patientAddWindow), 700,700);
+    gtk_window_resize(GTK_WINDOW(patientAddWindow), 200,200);
 
     /* Maximiser la fen�tre */
     gtk_window_maximize (GTK_WINDOW(patientAddWindow));
@@ -284,9 +307,11 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     plasmapherese = gtk_entry_get_text(plasmapherese_);
     smoke = gtk_entry_get_text(smoke_);
 
-    patient * p;
-    addPatientStruct(&p,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
-    request = query(&p);
-    // add(request);
+    patient patientStruct;
+    addPatientStruct(&patientStruct,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
+    puts(patientStruct.name);
+    query(&patientStruct);
+
+
 
 }

@@ -2,7 +2,7 @@
 //Typedef
 
 typedef char* string;
-
+typedef struct config config;
 typedef struct patient patient;
 //Structures
 struct patient
@@ -18,6 +18,8 @@ struct patient
     string plasmapherese;
     string smoke;
 };
+
+
 // Prototype
 
 void mysql(string);
@@ -25,4 +27,4 @@ void addPatientStruct(patient *, string, string, string, string, string, string,
 void addPatientWindow(int,char **,GtkWidget *);
 void button_addPatient(GtkWidget*, GtkWidget*, GtkWidget*, GtkWidget*, GtkWidget*, GtkWidget*, GtkWidget*, GtkWidget* ,GtkWidget*, GtkWidget*, GtkWidget*, GtkWidget*);
 void validate_addPatient(GtkWidget *,GtkWidget * ,GtkWidget * ,int ,char **);
-string query();
+void query();
