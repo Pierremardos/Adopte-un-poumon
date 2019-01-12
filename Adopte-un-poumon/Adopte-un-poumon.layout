@@ -3,6 +3,7 @@
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<File name="functions\Graphical_functions.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 =======
 <<<<<<< HEAD
@@ -115,6 +116,11 @@
 			<Cursor1 position="13413" topLine="410" />
 >>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
 >>>>>>> 068b87182502fefe0de689422e948a0e367b1a12
+=======
+	<File name="functions\addPatient_functions.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="949" topLine="30" />
+>>>>>>> 2aa934536a076baf8644c032a9e87850a75f383a
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
