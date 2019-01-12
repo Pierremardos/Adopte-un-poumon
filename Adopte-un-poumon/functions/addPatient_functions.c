@@ -100,7 +100,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organes.jpg",NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
-    gtk_window_resize(GTK_WINDOW(patientAddWindow), changeHeight(),changeWidth());
+    gtk_window_resize(GTK_WINDOW(patientAddWindow), 700,700);
 
     /* Maximiser la fen�tre */
     gtk_window_maximize (GTK_WINDOW(patientAddWindow));
