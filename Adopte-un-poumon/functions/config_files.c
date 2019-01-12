@@ -14,6 +14,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 
 
 
+
     FILE* open_file;
     open_file = fopen("config/config.txt","r+");
 
@@ -39,7 +40,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
             printf("Le curseur est a : %d \n",cursor);
             counter++;
 
-            printf("Ligne numéro : %d\n",counter);
+            printf("Ligne numï¿½ro : %d\n",counter);
             puts(find_equal);
 
 

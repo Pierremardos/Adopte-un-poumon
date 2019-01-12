@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547224158 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547310491 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -35,9 +35,9 @@
 	<MYSQL/mysql.h>
 	"functions/Graphical_header.h"
 
-1547058296 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547309904 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547224771 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547312621 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -124,14 +124,15 @@
 
 1547043837 h"
 
-1547051515 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
+1547309904 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547137551 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547311754 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
 	"config_files.h"
+	"Graphical_header.h"
 
 1547051767 449a3a022bf97c0d7e81830d10753cc50e0f5
 
@@ -163,7 +164,7 @@
 
 1547211188 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 
-1547224978 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+1547312613 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -174,7 +175,7 @@
 	"zerogets.h"
 	"addLungs_fonctions.h"
 
-1547226861 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+1547314691 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
 
 1547293479 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>
@@ -190,6 +191,17 @@
 1547253287 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
 
 1547295620 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\erreur.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+	"addPatients_header.h"
+	"zerogets.h"
+	"addLungs_fonctions.h"
+
+1547309904 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\erreur.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
