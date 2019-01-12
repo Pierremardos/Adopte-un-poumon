@@ -8,11 +8,8 @@
 void changes_files(GtkWidget * mainWindow)
 {
     char line [100]; // Maximum de caractere sur une line
-    string array;
-    string find_equal;
-    string pathimage;
-    string sizeWindow;
-    string test;
+
+    string find_equal, pathImage, width, height;
     int actual_carac = 0, cursor=0, counter=0, i=0, size=0;
 
 
@@ -25,10 +22,10 @@ void changes_files(GtkWidget * mainWindow)
     if (open_file !=NULL)
     {
         find_equal = malloc(sizeof(char)* 100);
-        pathimage = malloc(sizeof(char)* 100);
-        sizeWindow = malloc(sizeof(char)* 100);
-        test = malloc(sizeof(char)* 100);
+        pathImage = malloc(sizeof(char)* 100);
 
+        width = malloc(sizeof(char)* 100);
+        height = malloc(sizeof(char)* 100);
 
 
         while ( fgets ( line, sizeof(line), open_file ) != NULL ) // LIS LE FICHIER LIGNE PAR LIGNE
@@ -39,7 +36,7 @@ void changes_files(GtkWidget * mainWindow)
             cursor = ftell(open_file);
 
             find_equal = strstr(line,"=")+1;
-
+            printf("Le curseur est a : %d \n",cursor);
             counter++;
 
             printf("%d\n",counter);
@@ -50,31 +47,38 @@ void changes_files(GtkWidget * mainWindow)
             switch(counter)
             {
             case 1 :
-                pathimage = find_equal;
-                puts(pathimage);
+                strcpy(pathImage, find_equal);
+                puts(pathImage);
+                ChangePathImage(pathImage);
                 break;
             case 2 :
-                test = find_equal;
-                puts(test);
+                strcpy(width, find_equal);
+                puts(width);
+                changeWidth(width);
                 break;
             case 3 :
-                sizeWindow = find_equal;
-                puts(sizeWindow);
+                strcpy(height, find_equal);
+                puts(height);
+                changeHeight(height);
                 break;
             default:
                 impossible_change_file(mainWindow);
+                break;
 
             }
-        puts(pathimage);
+
+
+
 
         }
 
+        free(find_equal);
+        free(pathImage);
+        free(width);
+        free(height);
 
         fclose( open_file );
-        free(find_equal);
-        free(pathimage);
-        free(sizeWindow);
-        free(test);
+
     }
     else
     {
@@ -82,4 +86,19 @@ void changes_files(GtkWidget * mainWindow)
     }
 }
 
-
+string ChangePathImage(string pathImage)
+{
+    return pathImage;
+}
+int changeWidth(string width)
+{
+    intWidht =  atoi(width);
+    int intWidht;
+    return intWidht;
+}
+int changeHeight(string height)
+{
+    int intHeight;
+    intHeight ) atoi(height);
+    return intHeight;
+}

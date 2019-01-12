@@ -1,3 +1,4 @@
 path_image=test.png
-test=test
-size_main_window=700
+width=700
+height= 700
+
