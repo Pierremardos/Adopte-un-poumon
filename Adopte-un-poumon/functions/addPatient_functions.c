@@ -16,7 +16,7 @@
 
 void addPatientStruct(patient * patientStruct,string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
 {
-<<<<<<< HEAD
+
     patientStruct->name = name;
     patientStruct->surname = surname;
     patientStruct->birth = birth;
@@ -28,39 +28,20 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
     patientStruct->plasmapherese = plasmapherese;
     patientStruct->smoke = smoke;
     puts(patientStruct->name);
-=======
-    p->name = name;
-    p->surname = surname;
-    p->birth = birth;
-    p->dateInscription = dateInscription;
-    p->height = height;
-    p->weight = weight;
-    p->bloodType = bloodType;
-    p->HLA = HLA;
-    p->plasmapherese = plasmapherese;
-    p->smoke = smoke;
 
-
->>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
 }
 
-void query(patient * p)
+void query(patient * patientStruct)
 {
     char request[1000];
-<<<<<<< HEAD
-    //variable maudide
-    //int boui[200];
-
-=======
-    static id=5;
->>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
+    //char max_id[200];
 
     MYSQL mysql;
     mysql_init(&mysql);
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
-        sprintf(request,"INSERT INTO patients VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",p->name,p->surname,p->birth,p->dateInscription,p->height,p->weight,p->bloodType,p->HLA,p->plasmapherese,p->smoke);
+        sprintf(request,"INSERT INTO patients VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
 
@@ -71,25 +52,7 @@ void query(patient * p)
 
     }
 }
-<<<<<<< HEAD
-=======
-void add(string request)
-{
 
-    printf(request);
-    MYSQL mysql;
-    mysql_init(&mysql);
-    mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
-    if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
-    {
-
-        mysql_query(&mysql, request);
-        mysql_close(&mysql);
-    }
-    else
-    {
-        printf("Erreur connexion");
->>>>>>> 632546a782ff3d7f8c43635d106aa4b13f95041c
 
 /*----------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
