@@ -9,7 +9,7 @@ void changes_files(GtkWidget * mainWindow)
 {
     char line [100]; // Maximum de caractere sur une line
 
-    string find_equal, pathImage, width, height;
+    string find_equal, pathImage, width, height,intWidht,intHeight;
     int actual_carac = 0, cursor=0, counter=0, i=0, size=0;
 
 
@@ -54,12 +54,12 @@ void changes_files(GtkWidget * mainWindow)
             case 2 :
                 strcpy(width, find_equal);
                 puts(width);
-                changeWidth(width);
+                intWidht =  atoi(width);
                 break;
             case 3 :
                 strcpy(height, find_equal);
                 puts(height);
-                changeHeight(height);
+                intHeight = atoi(height);
                 break;
             default:
                 impossible_change_file(mainWindow);
@@ -90,15 +90,4 @@ string ChangePathImage(string pathImage)
 {
     return pathImage;
 }
-int changeWidth(string width)
-{
-    intWidht =  atoi(width);
-    int intWidht;
-    return intWidht;
-}
-int changeHeight(string height)
-{
-    int intHeight;
-    intHeight ) atoi(height);
-    return intHeight;
-}
+
