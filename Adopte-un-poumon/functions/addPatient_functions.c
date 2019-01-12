@@ -64,7 +64,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 {
     GtkWidget * main_box = NULL;
     GtkWidget * patientAddWindow=NULL;
-    char pathImage[100] = "organes.jpg";
+    char pathImage[100];
     int width,height;
     //recuperation dans le fichier config
     config * configStruct;
@@ -73,7 +73,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     puts(configStruct->pathImage);
     width=configStruct->width;
     height=configStruct->height;
-    //strcpy(pathImage,configStruct->pathImage);
+    strcpy(pathImage,configStruct->pathImage);
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
