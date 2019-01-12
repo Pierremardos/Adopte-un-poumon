@@ -34,7 +34,7 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
 
 void query(patient * patientStruct)
 {
-    char request[1000];
+    char request[10000];
     char maudit[10];
 
     MYSQL mysql;
@@ -64,7 +64,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 {
     GtkWidget * main_box = NULL;
     GtkWidget * patientAddWindow=NULL;
-    string pathImage;
+    char pathImage[100] = "organes.jpg";
     int width,height;
     //recuperation dans le fichier config
     config * configStruct;
@@ -73,7 +73,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     puts(configStruct->pathImage);
     width=configStruct->width;
     height=configStruct->height;
-    pathImage=configStruct->pathImage;
+    //strcpy(pathImage,configStruct->pathImage);
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
@@ -92,6 +92,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_position(GTK_WINDOW(patientAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* D�finition d'un icone de la fen�tre */
+    puts(pathImage);
     gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),pathImage,NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
