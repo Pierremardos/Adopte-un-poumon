@@ -10,6 +10,7 @@
 #include "Graphical_header.h"
 #include "addPatients_header.h"
 #include "config_files.h"
+#include "addLungs_fonctions.h"
 
 
 void  impossible_open_file(GtkWidget * mainWindow)
@@ -72,7 +73,7 @@ static GtkItemFactoryEntry MenuItem[] = {
     { "/_Fichier", NULL, NULL, 0, "<Branch>" },
     { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_FIND },
     { "/Fichier/_Nouveaux patients", "<ctrl>A", addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Nouveaux poumons", "<ctrl>S", NULL, 0, "<StockItem>", GTK_STOCK_ADD },
+    { "/Fichier/_Nouveaux poumons", "<ctrl>S", addLungsWindow, 0, "<StockItem>", GTK_STOCK_ADD },
     { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
 };
 
@@ -400,6 +401,7 @@ void launch_program(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
         break;
 
     }
+
     /* Connexion du signal "clicked" du bouton */
     g_signal_connect_swapped(G_OBJECT(pQuitBtn), "clicked", G_CALLBACK(second_window), NULL);
 

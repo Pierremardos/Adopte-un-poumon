@@ -1,5 +1,4 @@
 
-
 //Typedef
 
 typedef char* string;
