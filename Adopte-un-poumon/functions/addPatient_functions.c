@@ -34,7 +34,7 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
 void query(patient * patientStruct)
 {
     char request[1000];
-    //char max_id[200];
+    char maudit[10];
 
     MYSQL mysql;
     mysql_init(&mysql);
