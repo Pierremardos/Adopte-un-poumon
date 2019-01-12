@@ -34,8 +34,8 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
 
 void query(patient * patientStruct)
 {
-    char request[10000];
-    char maudit[10];
+    string request;
+    request = malloc(sizeof(char)*500);
 
     MYSQL mysql;
     mysql_init(&mysql);
@@ -45,6 +45,7 @@ void query(patient * patientStruct)
         sprintf(request,"INSERT INTO patients(`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `sex`, `bloodtype`, `hla`, `plasmapherese`, `smoke`) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
+        free(request);
 
     }
     else
