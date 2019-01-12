@@ -49,7 +49,7 @@
 	"config_files.h"
 	"addLungs_fonctions.h"
 
-1547321078 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547323159 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -60,7 +60,7 @@
 	"zerogets.h"
 	"config_files.h"
 
-1547317707 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547323052 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
 1547043974 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>

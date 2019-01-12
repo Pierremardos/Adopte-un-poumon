@@ -14,7 +14,7 @@
 
 
 
-void addPatientStruct(patient * patientStruct,string name,string surname, string birth, string dateInscription, string height, string weight, string bloodType, string HLA, string plasmapherese, string smoke)
+void addPatientStruct(patient * patientStruct,string name,string surname, string birth, string dateInscription, string height, string weight, string sex, string bloodType, string HLA, string plasmapherese, string smoke)
 {
 
     patientStruct->name = name;
@@ -23,6 +23,7 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
     patientStruct->dateInscription = dateInscription;
     patientStruct->height = height;
     patientStruct->weight = weight;
+    patientStruct->sex = sex;
     patientStruct->bloodType = bloodType;
     patientStruct->HLA = HLA;
     patientStruct->plasmapherese = plasmapherese;
@@ -41,7 +42,7 @@ void query(patient * patientStruct)
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
-        sprintf(request,"INSERT INTO patients VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
+        sprintf(request,"INSERT INTO patients VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
 
@@ -63,11 +64,11 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 {
     GtkWidget * main_box = NULL;
     GtkWidget * patientAddWindow=NULL;
-    //config * configStruct;
 
     //recuperation dans le fichier config
-    //changes_files(mainWindow, configStruct);
-
+    config * configStruct;
+    changes_files(mainWindow, &configStruct);
+    /////////////////////////////////////////
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
@@ -86,10 +87,10 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_position(GTK_WINDOW(patientAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* D�finition d'un icone de la fen�tre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organes.jpg",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),configStruct->pathImage,NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
-    gtk_window_resize(GTK_WINDOW(patientAddWindow), 200,200);
+    gtk_window_resize(GTK_WINDOW(patientAddWindow), configStruct->width,configStruct->height);
 
     /* Maximiser la fen�tre */
     gtk_window_maximize (GTK_WINDOW(patientAddWindow));
@@ -119,6 +120,7 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
     GtkWidget * dateInscription;
     GtkWidget * height;
     GtkWidget * weight;
+    GtkWidget * sex;
     GtkWidget * bloodType;
     GtkWidget * HLA;
     GtkWidget * plasmapherese;
@@ -166,6 +168,11 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
     weight = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), weight, TRUE, TRUE, 0);
 
+    label = gtk_label_new("Sexe (1 pour homme, 2 pour femme) :");
+    gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
+    sex = gtk_entry_new();
+    gtk_box_pack_start(GTK_BOX(main_box), sex, TRUE, TRUE, 0);
+
 
     label = gtk_label_new("Groupe Sanguin :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
@@ -188,11 +195,11 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
     smoke = gtk_entry_new_with_max_length(3);
     gtk_box_pack_start(GTK_BOX(main_box), smoke, TRUE, TRUE, 0);
 
-    button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight,bloodType, HLA, plasmapherese, smoke);
+    button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight, sex, bloodType, HLA, plasmapherese, smoke);
 
 }
 
-void button_addPatient(GtkWidget * addPatientWindow, GtkWidget * main_box, GtkWidget * name, GtkWidget * surname, GtkWidget * birth, GtkWidget * dateInscription, GtkWidget * height, GtkWidget * weight,GtkWidget * bloodType, GtkWidget * HLA, GtkWidget * plasmapherese, GtkWidget * smoke)
+void button_addPatient(GtkWidget * addPatientWindow, GtkWidget * main_box, GtkWidget * name, GtkWidget * surname, GtkWidget * birth, GtkWidget * dateInscription, GtkWidget * height, GtkWidget * weight, GtkWidget * sex,GtkWidget * bloodType, GtkWidget * HLA, GtkWidget * plasmapherese, GtkWidget * smoke)
 {
     GtkWidget * button_co;
     /* Bouton avec un label */
@@ -207,6 +214,7 @@ void button_addPatient(GtkWidget * addPatientWindow, GtkWidget * main_box, GtkWi
     g_object_set_data(G_OBJECT(button_co), "dateInscription", dateInscription);
     g_object_set_data(G_OBJECT(button_co), "height", height);
     g_object_set_data(G_OBJECT(button_co), "weight", weight);
+    g_object_set_data(G_OBJECT(button_co), "sex", sex);
     g_object_set_data(G_OBJECT(button_co), "bloodType", bloodType);
     g_object_set_data(G_OBJECT(button_co), "HLA", HLA);
     g_object_set_data(G_OBJECT(button_co), "plasmapherese", plasmapherese);
@@ -230,6 +238,7 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     GtkEntry * dateInscription_;
     GtkEntry * height_;
     GtkEntry * weight_;
+    GtkEntry * sex_;
     GtkEntry * bloodType_;
     GtkEntry * HLA_;
     GtkEntry * plasmapherese_;
@@ -241,6 +250,7 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     const gchar * dateInscription;
     const gchar * height;
     const gchar * weight;
+    const gchar * sex;
     const gchar * bloodType;
     const gchar * HLA;
     const gchar * plasmapherese;
@@ -254,6 +264,7 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     dateInscription_ = g_object_get_data (G_OBJECT(button_co), "dateInscription");
     height_ = g_object_get_data (G_OBJECT(button_co), "height");
     weight_ = g_object_get_data (G_OBJECT(button_co), "weight");
+    sex_ = g_object_get_data (G_OBJECT(button_co), "sex");
     bloodType_ = g_object_get_data (G_OBJECT(button_co), "bloodType");
     HLA_ = g_object_get_data (G_OBJECT(button_co), "HLA");
     plasmapherese_ = g_object_get_data (G_OBJECT(button_co), "plasmapherese");
@@ -265,13 +276,14 @@ void validate_addPatient(GtkWidget *button_co,GtkWidget * addPatientWindow,GtkWi
     dateInscription = gtk_entry_get_text(dateInscription_);
     height = gtk_entry_get_text(height_);
     weight = gtk_entry_get_text(weight_);
+    sex = gtk_entry_get_text(sex_);
     bloodType = gtk_entry_get_text(bloodType_);
     HLA = gtk_entry_get_text(HLA_);
     plasmapherese = gtk_entry_get_text(plasmapherese_);
     smoke = gtk_entry_get_text(smoke_);
 
     patient patientStruct;
-    addPatientStruct(&patientStruct,name, surname, birth, dateInscription, height, weight, bloodType, HLA, plasmapherese, smoke);
+    addPatientStruct(&patientStruct,name, surname, birth, dateInscription, height, weight, sex, bloodType, HLA, plasmapherese, smoke);
     puts(patientStruct.name);
     query(&patientStruct);
 
