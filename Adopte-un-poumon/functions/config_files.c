@@ -9,8 +9,8 @@ void changes_files(GtkWidget * mainWindow)
 {
     char line [100]; // Maximum de caractere sur une line
 
-    string find_equal, pathImage, width, height,intWidht,intHeight;
-    int actual_carac = 0, cursor=0, counter=0, i=0, size=0;
+    string find_equal, pathImage, width, height;
+    int actual_carac = 0, cursor=0, counter=0, i=0, size=0, intWidht=0,intHeight=0;
 
 
 
