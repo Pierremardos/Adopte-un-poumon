@@ -91,26 +91,7 @@ void toolbar_window(GtkWidget * window,GtkWidget * main_box)
 
 
 }
-void display_error_message(GtkWidget * second_window,GtkWidget * main_box)
-{
-    GtkWidget * error;
 
-    /* Création de la boite de message */
-    /* Type : Information -> GTK_MESSAGE_INFO */
-    /* Bouton : 1 OK -> GTK_BUTTONS_OK */
-    error = gtk_message_dialog_new (GTK_WINDOW(second_window),
-                                    GTK_DIALOG_MODAL,
-                                    GTK_MESSAGE_ERROR,
-                                    GTK_BUTTONS_OK,
-                                    "Vous avez saisie un mauvais login/password, veuillez reessayer : ");
-
-    /* Affichage de la boite de message */
-    gtk_dialog_run(GTK_DIALOG(error));
-
-
-    /* Destruction de la boite de message */
-    gtk_widget_destroy(error);
-}
 
 void main_program(int argc, char ** argv)
 {
