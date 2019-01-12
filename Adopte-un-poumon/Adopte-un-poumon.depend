@@ -49,7 +49,7 @@
 	"config_files.h"
 	"addLungs_fonctions.h"
 
-1547218073 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547300662 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -59,7 +59,7 @@
 	"addPatients_header.h"
 	"zerogets.h"
 
-1547116924 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547253287 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
 1547043974 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
@@ -76,7 +76,7 @@
 
 1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
 
-1547132299 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547295616 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -86,8 +86,9 @@
 	"Graphical_header.h"
 	"addPatients_header.h"
 	"config_files.h"
+	"addLungs_fonctions.h"
 
-1547054391 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547295652 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
 1547044241 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\main.c
 	<stdio.h>
@@ -133,14 +134,15 @@
 
 1547051767 449a3a022bf97c0d7e81830d10753cc50e0f5
 
-1547052970 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
+1547300367 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547217716 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547297164 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
 	<string.h>
 	"config_files.h"
+	"Graphical_header.h"
 
 1547211562 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 
@@ -172,4 +174,28 @@
 	"addLungs_fonctions.h"
 
 1547226861 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+
+1547293479 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+	"addPatients_header.h"
+	"zerogets.h"
+	"addLungs_fonctions.h"
+
+1547253287 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+
+1547295620 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\erreur.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<gtk/gtk.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+	"addPatients_header.h"
+	"zerogets.h"
+	"addLungs_fonctions.h"
 

@@ -37,17 +37,17 @@ void formLungs(GtkWidget * addLungsWindow,GtkWidget * main_box)
 
 
 
-     }
-    /* Creation du premier GtkFrame */
-    frame = gtk_frame_new("Ajout d'un poumon");
-    gtk_box_pack_start(GTK_BOX(main_box), frame, TRUE, FALSE, 0);
+
+/* Creation du premier GtkFrame */
+frame = gtk_frame_new("Ajout d'un poumon");
+gtk_box_pack_start(GTK_BOX(main_box), frame, TRUE, FALSE, 0);
 
 
 
-    /* Creation et insertion des elements contenus dans le premier GtkFrame */
+/* Creation et insertion des elements contenus dans le premier GtkFrame */
 
 
-    // button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight,bloodType, HLA, plasmapherese, smoke);
+// button_addPatient(addPatientWindow, main_box, name, surname, birth, dateInscription, height, weight,bloodType, HLA, plasmapherese, smoke);
 
 }
 

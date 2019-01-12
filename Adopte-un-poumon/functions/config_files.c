@@ -3,51 +3,82 @@
 #include <gtk/gtk.h>
 #include <string.h>
 #include "config_files.h"
+#include "Graphical_header.h"
+
 void changes_files(GtkWidget * mainWindow)
 {
-    char line [50]; // Maximum de caractere sur une line
-    char * array;
-    char * find_equal;
-    char * pathimage;
-    char * sizeWindow;
-    char * test;
-    int actual_carac = 0;
-    int cursor=0;
-    int counter=0;
-    int i=0;
+    char line [100]; // Maximum de caractere sur une line
+
+    string find_equal, pathImage, width, height;
+    int actual_carac = 0, cursor=0, counter=0, i=0, size=0;
+
+
+
     FILE* open_file;
-    int size=0;
     open_file = fopen("config/config.txt","r+");
+
+
+
     if (open_file !=NULL)
     {
-        find_equal = malloc(sizeof(char)* 50);
-        pathimage = malloc(sizeof(char)* 50);
-        sizeWindow = malloc(sizeof(char)* 50);
-        test = malloc(sizeof(char)* 50);
+        find_equal = malloc(sizeof(char)* 100);
+        pathImage = malloc(sizeof(char)* 100);
 
+        width = malloc(sizeof(char)* 100);
+        height = malloc(sizeof(char)* 100);
 
 
         while ( fgets ( line, sizeof(line), open_file ) != NULL ) // LIS LE FICHIER LIGNE PAR LIGNE
-            // RAJOUTE /n et /O a la fin de chaque ligne sauf la derniere
+            // Passe a la ligne
         {
 
-            fseek(open_file,0,SEEK_CUR);
+
             cursor = ftell(open_file);
-            // printf("%d",cursor);
+
             find_equal = strstr(line,"=")+1;
+            printf("Le curseur est a : %d \n",cursor);
+            counter++;
+
+            printf("%d\n",counter);
+            puts(find_equal);
 
 
-            sscanf( find_equal, "%s %s %s", pathimage, sizeWindow,test );
-            //puts(pathimage);
-            sscanf(pathimage,"%s %s %s",pathimage,sizeWindow,test);
-            puts(sizeWindow);
+
+            switch(counter)
+            {
+            case 1 :
+                strcpy(pathImage, find_equal);
+                puts(pathImage);
+                ChangePathImage(pathImage);
+                break;
+            case 2 :
+                strcpy(width, find_equal);
+                puts(width);
+                changeWidth(width);
+                break;
+            case 3 :
+                strcpy(height, find_equal);
+                puts(height);
+                changeHeight(height);
+                break;
+            default:
+                impossible_change_file(mainWindow);
+                break;
+
+            }
+
 
 
 
         }
 
-        fclose( open_file );
         free(find_equal);
+        free(pathImage);
+        free(width);
+        free(height);
+
+        fclose( open_file );
+
     }
     else
     {
@@ -55,4 +86,19 @@ void changes_files(GtkWidget * mainWindow)
     }
 }
 
-
+string ChangePathImage(string pathImage)
+{
+    return pathImage;
+}
+int changeWidth(string width)
+{
+    intWidht =  atoi(width);
+    int intWidht;
+    return intWidht;
+}
+int changeHeight(string height)
+{
+    int intHeight;
+    intHeight ) atoi(height);
+    return intHeight;
+}

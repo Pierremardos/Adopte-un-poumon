@@ -13,19 +13,6 @@
 #include "addLungs_fonctions.h"
 
 
-void  impossible_open_file(GtkWidget * mainWindow)
-{
-    GtkWidget * dialog;
-
-dialog = gtk_message_dialog_new (mainWindow,
-                                 GTK_DIALOG_DESTROY_WITH_PARENT,
-                                 GTK_MESSAGE_ERROR,
-                                 GTK_BUTTONS_CLOSE,
-                                 "Impossible d'ouvrir le fichier de configuration : "
-                                 );
-gtk_dialog_run (GTK_DIALOG (dialog));
-gtk_widget_destroy (dialog);
-}
 
 void button_change_files(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
 {
@@ -104,26 +91,7 @@ void toolbar_window(GtkWidget * window,GtkWidget * main_box)
 
 
 }
-void display_error_message(GtkWidget * second_window,GtkWidget * main_box)
-{
-    GtkWidget * error;
 
-    /* Création de la boite de message */
-    /* Type : Information -> GTK_MESSAGE_INFO */
-    /* Bouton : 1 OK -> GTK_BUTTONS_OK */
-    error = gtk_message_dialog_new (GTK_WINDOW(second_window),
-                                    GTK_DIALOG_MODAL,
-                                    GTK_MESSAGE_ERROR,
-                                    GTK_BUTTONS_OK,
-                                    "Vous avez saisie un mauvais login/password, veuillez reessayer : ");
-
-    /* Affichage de la boite de message */
-    gtk_dialog_run(GTK_DIALOG(error));
-
-
-    /* Destruction de la boite de message */
-    gtk_widget_destroy(error);
-}
 
 void main_program(int argc, char ** argv)
 {
@@ -150,7 +118,7 @@ void main_program(int argc, char ** argv)
     gtk_window_set_icon_from_file(GTK_WINDOW(window),"organes.jpg",NULL);
 
     /* On définit la taile de la fenêtre par défault */
-    gtk_window_resize(GTK_WINDOW(window), 400,400);
+    gtk_window_resize(GTK_WINDOW(window), 1000,1000);
 
     /* Maximiser la fenêtre */
     gtk_window_maximize (GTK_WINDOW(window));
