@@ -150,7 +150,7 @@ void main_program(int argc, char ** argv)
     gtk_window_set_icon_from_file(GTK_WINDOW(window),"organes.jpg",NULL);
 
     /* On définit la taile de la fenêtre par défault */
-    gtk_window_resize(GTK_WINDOW(window), 400,400);
+    gtk_window_resize(GTK_WINDOW(window), 1000,1000);
 
     /* Maximiser la fenêtre */
     gtk_window_maximize (GTK_WINDOW(window));
