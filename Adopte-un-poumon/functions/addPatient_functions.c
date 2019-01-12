@@ -42,7 +42,7 @@ void query(patient * patientStruct)
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
-        sprintf(request,"INSERT INTO patients VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
+        sprintf(request,"INSERT INTO patients(`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `sex`, `bloodtype`, `hla`, `plasmapherese`, `smoke`) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
 
@@ -87,7 +87,7 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_position(GTK_WINDOW(patientAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* D�finition d'un icone de la fen�tre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),configStruct->pathImage,NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organe.jpg",NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
     gtk_window_resize(GTK_WINDOW(patientAddWindow), configStruct->width,configStruct->height);
