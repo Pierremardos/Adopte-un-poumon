@@ -64,11 +64,16 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
 {
     GtkWidget * main_box = NULL;
     GtkWidget * patientAddWindow=NULL;
-
+    string pathImage;
+    int width,height;
     //recuperation dans le fichier config
     config * configStruct;
-    changes_files(mainWindow, &configStruct);
+    changes_files(mainWindow, configStruct);
     /////////////////////////////////////////
+    puts(configStruct->pathImage);
+    width=configStruct->width;
+    height=configStruct->height;
+    pathImage=configStruct->pathImage;
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
@@ -87,10 +92,10 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_position(GTK_WINDOW(patientAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* D�finition d'un icone de la fen�tre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),"organe.jpg",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(patientAddWindow),pathImage,NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
-    gtk_window_resize(GTK_WINDOW(patientAddWindow), configStruct->width,configStruct->height);
+    gtk_window_resize(GTK_WINDOW(patientAddWindow), width,height);
 
     /* Maximiser la fen�tre */
     gtk_window_maximize (GTK_WINDOW(patientAddWindow));
