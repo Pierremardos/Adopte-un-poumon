@@ -1,5 +1,14 @@
 typedef char* string;
-void changes_files(GtkWidget *);
-string ChangePathImage(string pathImage);
-string changeWidth(string width);
-string changeHeight(string height);
+
+
+typedef struct config config;
+struct config
+{
+    string pathImage;
+    int width;
+    int height;
+};
+
+void changes_files(GtkWidget *, config *);
+void addConfigStruct(config *, string ,int , int );
+

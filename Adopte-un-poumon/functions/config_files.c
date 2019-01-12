@@ -5,12 +5,12 @@
 #include "config_files.h"
 #include "Graphical_header.h"
 
-void changes_files(GtkWidget * mainWindow)
+void changes_files(GtkWidget * mainWindow, config * configStruct)
 {
     char line [100]; // Maximum de caractere sur une line
 
-    string find_equal, pathImage, width, height,intWidht,intHeight;
-    int actual_carac = 0, cursor=0, counter=0, i=0, size=0;
+    string find_equal, pathImage, width, height;
+    int actual_carac = 0, cursor=0, counter=0, i=0, size=0,intWidht,intHeight;
 
 
 
@@ -39,7 +39,7 @@ void changes_files(GtkWidget * mainWindow)
             printf("Le curseur est a : %d \n",cursor);
             counter++;
 
-            printf("%d\n",counter);
+            printf("Ligne numéro : %d\n",counter);
             puts(find_equal);
 
 
@@ -49,7 +49,6 @@ void changes_files(GtkWidget * mainWindow)
             case 1 :
                 strcpy(pathImage, find_equal);
                 puts(pathImage);
-                ChangePathImage(pathImage);
                 break;
             case 2 :
                 strcpy(width, find_equal);
@@ -71,7 +70,8 @@ void changes_files(GtkWidget * mainWindow)
 
 
         }
-
+        addConfigStruct(&configStruct, pathImage, intWidht, intHeight);
+        printf("%d",configStruct->height);
         free(find_equal);
         free(pathImage);
         free(width);
@@ -86,8 +86,10 @@ void changes_files(GtkWidget * mainWindow)
     }
 }
 
-string ChangePathImage(string pathImage)
+void addConfigStruct(config * configStruct, string pathImage,int width, int height)
 {
-    return pathImage;
-}
+    configStruct-> pathImage = pathImage;
+    configStruct->width = width;
+    configStruct->height = height;
 
+}

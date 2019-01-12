@@ -18,7 +18,7 @@ void main_program(int argc, char ** argv);
 void toolbar_window(GtkWidget * window,GtkWidget * main_box);
 void leave (gpointer , guint ,GtkWidget *);
 void button_change_files(GtkWidget *,GtkWidget *, gint);
-void changes_files(GtkWidget *);
+
 
 
 
