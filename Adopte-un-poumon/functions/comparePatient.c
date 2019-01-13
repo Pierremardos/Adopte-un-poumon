@@ -48,6 +48,7 @@ void compare_bloodType(lung* lung_comparate)
     //Si la connexion réussie...
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
+        hla_function(lung_comparate);
         //Requête qui sélectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
         sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9)",smoke,result_blood,cpt_lung,cpt_lung);
         puts(req_select);

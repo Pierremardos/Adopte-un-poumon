@@ -191,7 +191,7 @@ void formLungs(GtkWidget * addLungsWindow,GtkWidget * main_box)
     weight = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), weight, TRUE, TRUE, 0);
 
-    label = gtk_label_new("Date de naissance (JJ/MM/AAAA) :");
+    label = gtk_label_new("Hla :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     hla = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), hla, TRUE, TRUE, 0);

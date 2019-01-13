@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547347087 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547391718 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -161,7 +161,7 @@
 	"addLungs_fonctions.h"
 	"comparePatient.h"
 
-1547389507 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+1547391781 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -190,7 +190,7 @@
 1547385461 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 	"CPT_header.h"
 
-1547341068 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+1547392868 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -247,4 +247,13 @@
 	"addLungs_fonctions.h"
 
 1547386159 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\smoke_function.h
+
+1547395847 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"hla_function.h"
+	"addLungs_fonctions.h"
+
+1547392996 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.h
 
