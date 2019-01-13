@@ -36,11 +36,16 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
 
 void query(patient * patientStruct)
 {
+<<<<<<< HEAD
     char request[10000];
     char maudit[10];
     double cpt;
     int height;
     int sex;
+=======
+    string request;
+    request = malloc(sizeof(char)*500);
+>>>>>>> 821efe29bf01d92f0c747106dbdc85682d2a152b
 
     MYSQL mysql;
     mysql_init(&mysql);
@@ -53,6 +58,7 @@ void query(patient * patientStruct)
         sprintf(request,"INSERT INTO patients(`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `sex`, `bloodtype`, `hla`, `plasmapherese`, `smoke`,`cpt`) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%lf')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke,cpt);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
+        free(request);
 
     }
     else
@@ -196,12 +202,12 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
 
     label = gtk_label_new("HLA (Mettez des espaces pour les séparer) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    HLA = gtk_entry_new_with_max_length(3);
+    HLA = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), HLA, TRUE, TRUE, 0);
 
     label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :)");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    plasmapherese = gtk_entry_new_with_max_length(3);
+    plasmapherese = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, TRUE, TRUE, 0);
 
     label = gtk_label_new("Fumeur : (1 ou 0) :");
