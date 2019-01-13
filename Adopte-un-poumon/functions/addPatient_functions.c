@@ -189,12 +189,12 @@ void formPatient(GtkWidget * addPatientWindow,GtkWidget * main_box)
 
     label = gtk_label_new("HLA (Mettez des espaces pour les séparer) :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    HLA = gtk_entry_new_with_max_length(3);
+    HLA = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), HLA, TRUE, TRUE, 0);
 
     label = gtk_label_new("Plasmapherese (Mettez des espaces pour les séparer :)");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
-    plasmapherese = gtk_entry_new_with_max_length(3);
+    plasmapherese = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, TRUE, TRUE, 0);
 
     label = gtk_label_new("Fumeur : (1 ou 0) :");
