@@ -30,15 +30,15 @@ void compare_bloodType(lung* lung_comparate)
     unsigned int num_champs = 0;
     unsigned long *lengths;
     char hla1[20];
-    strcpy(hla1,"");
+    strcpy(hla1,"p");
     char hla2[20];
-    strcpy(hla2,"");
+    strcpy(hla2,"p");
     char hla3[20];
-    strcpy(hla3,"");
+    strcpy(hla3,"p");
     char hla4[20];
-    strcpy(hla4,"");
+    strcpy(hla4,"p");
     char hla5[20];
-    strcpy(hla5,"");
+    strcpy(hla5,"p");
     char hla6[20];
     char * hla_donator;
     double cpt_lung=0;
@@ -66,7 +66,7 @@ void compare_bloodType(lung* lung_comparate)
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
         //Requête qui sélectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
-        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND INSTR(hla, '%s' )=0 AND INSTR(hla, '%s' )=0 AND INSTR(hla, '%s' =0 ) AND INSTR(hla, '%s' )=0 AND INSTR(hla, '%s' )=0",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5);
+        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s') =0 ) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0)",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5);
         puts(req_select);
         mysql_query(&mysql,req_select);
         //On met le jeu de résultat dans le pointeur result

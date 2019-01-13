@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547399705 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547409405 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -38,9 +38,9 @@
 	<MYSQL/mysql.h>
 	"functions/Graphical_header.h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547409405 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547329485 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547409405 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -48,9 +48,9 @@
 	<winsock.h>
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
-	"addPatients_header.h"
 	"config_files.h"
 	"addLungs_fonctions.h"
+	"addPatients_header.h"
 
 1547405637 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
@@ -129,9 +129,9 @@
 
 1547043837 h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
+1547409405 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547333057 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547409405 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
