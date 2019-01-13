@@ -12,27 +12,6 @@
 #include "addLungs_fonctions.h"
 #include "addPatients_header.h"
 
-
-
-void button_change_files(GtkWidget * mainWindow,GtkWidget * main_box, gint iExemple)
-{
-    GtkWidget * button;
-    switch(iExemple)
-    {
-    default:
-    case EXEMPLE_3:
-        /* Bouton avec un label */
-        button = gtk_button_new_with_label("Modifier le fichier de configuration");
-        break;
-
-    }
-    /* Connexion du signal "clicked" du bouton */
-    g_signal_connect_swapped(G_OBJECT(button), "clicked", G_CALLBACK(changes_files),(GtkWidget*) mainWindow );
-
-    gtk_box_pack_end  (GTK_BOX (main_box), button, TRUE, FALSE, 0);
-
-
-}
 void  leave(gpointer data, guint callback_action,GtkWidget *widget)
 {
     GtkWidget * ask_leave;
@@ -111,6 +90,18 @@ void main_program(int argc, char ** argv)
   GtkWidget * main_box = NULL;
     GtkWidget * window=NULL;
 
+    int width,height;
+    string pathImage;
+    //recuperation dans le fichier config
+    config configStruct;
+    changes_files(window, &configStruct);
+    /////////////////////////////////////////
+
+    width=configStruct.width;
+    height=configStruct.height;
+    pathImage=configStruct.pathImage;
+    pathImage[strcspn(pathImage, "\n")] = 0;
+
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
 
@@ -128,10 +119,10 @@ void main_program(int argc, char ** argv)
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* Définition d'un icone de la fenêtre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(window),"organes.jpg",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(window),pathImage,NULL);
 
     /* On définit la taile de la fenêtre par défault */
-    gtk_window_resize(GTK_WINDOW(window), 1000,1000);
+    gtk_window_resize(GTK_WINDOW(window), width,height);
 
     /* Maximiser la fenêtre */
     gtk_window_maximize (GTK_WINDOW(window));
@@ -321,6 +312,18 @@ void second_window(int argc, char ** argv,GtkWidget * mainWindow)
     GtkWidget * main_box = NULL;
     GtkWidget * SecondWindow=NULL;
 
+    int width,height;
+    string pathImage;
+    //recuperation dans le fichier config
+    config configStruct;
+    changes_files(mainWindow, &configStruct);
+    /////////////////////////////////////////
+
+    width=configStruct.width;
+    height=configStruct.height;
+    pathImage=configStruct.pathImage;
+    pathImage[strcspn(pathImage, "\n")] = 0;
+
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
 
@@ -338,10 +341,10 @@ void second_window(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_position(GTK_WINDOW(SecondWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* Définition d'un icone de la fenêtre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(SecondWindow),"organes.jpg",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(SecondWindow),pathImage,NULL);
 
     /* On définit la taile de la fenêtre par défault */
-    gtk_window_resize(GTK_WINDOW(SecondWindow), 500,500);
+    gtk_window_resize(GTK_WINDOW(SecondWindow), width,height);
 
     /* Maximiser la fenêtre */
     gtk_window_maximize (GTK_WINDOW(SecondWindow));
@@ -422,7 +425,23 @@ void creation_label (GtkWidget * MainWindow,GtkWidget* mainLabel,gchar* convert_
 void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLabel,gchar* convert_mainLabel,gchar * positionLabel)
 {
     GtkWidget * main_box = NULL;
-    gchar * path_image ="./esgi.png";
+
+
+    int width,height;
+    string pathImage, pathImage2;
+    //recuperation dans le fichier config
+    config configStruct;
+    changes_files(MainWindow, &configStruct);
+    /////////////////////////////////////////
+
+    width=configStruct.width;
+    height=configStruct.height;
+    pathImage=configStruct.pathImage;
+    pathImage[strcspn(pathImage, "\n")] = 0;
+    pathImage2=configStruct.pathImage2;
+    pathImage2[strcspn(pathImage2, "\n")] = 0;
+    printf("%s hello",pathImage2);
+
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
 
@@ -440,10 +459,10 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     gtk_window_set_position(GTK_WINDOW(MainWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* Définition d'un icone de la fenêtre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(MainWindow),"test.png",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(MainWindow),pathImage,NULL);
 
     /* On définit la taile de la fenêtre par défault */
-    gtk_window_resize(GTK_WINDOW(MainWindow), 800,800);
+    gtk_window_resize(GTK_WINDOW(MainWindow), width,height);
 
     /* Maximiser la fenêtre */
     gtk_window_maximize (GTK_WINDOW(MainWindow));
@@ -461,13 +480,11 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     creation_label(MainWindow,mainLabel,convert_mainLabel,positionLabel,main_box);
 
     // Affichage image du milieu
-    first_image(MainWindow,main_box,path_image);
+    first_image(MainWindow,main_box,pathImage2);
 
     // BOUTON QUI PERMET DE LANCER LE PROGRAMME
     launch_program(MainWindow,main_box,EXEMPLE_3);
 
-    // BOUTON CONFIGURATION FICHIER
-    button_change_files(MainWindow,main_box,EXEMPLE_3);
 
     gtk_widget_show_all(MainWindow);
     gtk_main();

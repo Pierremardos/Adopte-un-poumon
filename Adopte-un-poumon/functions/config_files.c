@@ -10,7 +10,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 
     char line [100]; // Maximum de caractere sur une line
 
-    string find_equal, width, height, nouveauPatient, nouveauPoumon, pathImage;
+    string find_equal, width, height, nouveauPatient, nouveauPoumon, pathImage, pathImage2;
     int actual_carac = 0, cursor=0, counter=0, i=0, size=0,intWidth,intHeight;
 
 
@@ -27,6 +27,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
         nouveauPatient = malloc(sizeof(char)* 100);
         nouveauPoumon = malloc(sizeof(char)* 100);
         pathImage = malloc(sizeof(char)* 100);
+        pathImage2 = malloc(sizeof(char)* 100);
 
         width = malloc(sizeof(char)* 100);
         height = malloc(sizeof(char)* 100);
@@ -60,6 +61,9 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
             case 5 :
                 strcpy(pathImage, find_equal);
                 break;
+            case 6 :
+                strcpy(pathImage2, find_equal);
+                break;
             default:
                 impossible_change_file(mainWindow);
                 break;
@@ -70,8 +74,9 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 
         }
 
-        addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage);
-
+        addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage, pathImage2);
+        free(pathImage);
+        free(pathImage2);
         free(find_equal);
         free(nouveauPatient);
         free(nouveauPoumon);
@@ -87,12 +92,12 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
     }
 }
 
-void addConfigStruct(config * configStruct,int width, int height, string nouveauPatient, string nouveauPoumon, string pathImage)
+void addConfigStruct(config * configStruct,int width, int height, string nouveauPatient, string nouveauPoumon, string pathImage, string pathImage2)
 {
     configStruct->width = width;
     configStruct->height = height;
     configStruct->nouveauPatient = nouveauPatient;
     configStruct->nouveauPoumon = nouveauPoumon;
     configStruct->pathImage = pathImage;
-
+    configStruct->pathImage2 = pathImage2;
 }

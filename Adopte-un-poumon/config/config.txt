@@ -1,5 +1,6 @@
-width=1000
-height= 1000
+width=200
+height=200
 Nouveau patient=<ctrl>U
 Nouveau poumon=<ctrl>S
-icone =organes.jpg
+Icone de l'application=organes.jpg
+Image d'accueil=esgi.png

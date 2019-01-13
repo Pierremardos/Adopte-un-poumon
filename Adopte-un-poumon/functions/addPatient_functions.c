@@ -82,7 +82,6 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     /////////////////////////////////////////
     width=configStruct->width;
     height=configStruct->height;
-    height=configStruct->height;
     pathImage=configStruct->pathImage;
     pathImage[strcspn(pathImage, "\n")] = 0;
 

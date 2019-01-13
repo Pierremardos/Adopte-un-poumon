@@ -12,6 +12,8 @@
 
 #include "addLungs_fonctions.h"
 
+#include "config_files.h"
+
 
 void addLungsStruct(lung * lung_comparate,string last_name,string first_name, string sex, string old,string blood_type, string height, string weight, string hla, string plasmapherese, string smoke,string enter_bloc,string clamping,string notes)
 {
@@ -236,6 +238,19 @@ void addLungsWindow(int argc, char ** argv,GtkWidget * mainWindow)
     GtkWidget * main_box = NULL;
     GtkWidget * LungAddWindow=NULL;
 
+    int width,height;
+    string pathImage;
+    //recuperation dans le fichier config
+    config * configStruct;
+    changes_files(mainWindow, configStruct);
+    /////////////////////////////////////////
+    width=configStruct->width;
+    height=configStruct->height;
+    pathImage=configStruct->pathImage;
+    pathImage[strcspn(pathImage, "\n")] = 0;
+
+
+
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
 
@@ -253,10 +268,10 @@ void addLungsWindow(int argc, char ** argv,GtkWidget * mainWindow)
     gtk_window_set_position(GTK_WINDOW(LungAddWindow), GTK_WIN_POS_CENTER_ALWAYS  );
 
     /* D�finition d'un icone de la fen�tre */
-    gtk_window_set_icon_from_file(GTK_WINDOW(LungAddWindow),"organes.jpg",NULL);
+    gtk_window_set_icon_from_file(GTK_WINDOW(LungAddWindow),pathImage,NULL);
 
     /* On d�finit la taile de la fen�tre par d�fault */
-    gtk_window_resize(GTK_WINDOW(LungAddWindow), 200,200);
+    gtk_window_resize(GTK_WINDOW(LungAddWindow), width,height);
 
     /* Maximiser la fen�tre */
     gtk_window_maximize (GTK_WINDOW(LungAddWindow));

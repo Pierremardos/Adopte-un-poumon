@@ -9,8 +9,9 @@ struct config
     string nouveauPatient;
     string nouveauPoumon;
     string pathImage;
+    string pathImage2;
 };
 
 void changes_files(GtkWidget *, config *);
-void addConfigStruct(config *, int, int, string, string, string);
+void addConfigStruct(config *, int, int, string, string, string, string);
 
