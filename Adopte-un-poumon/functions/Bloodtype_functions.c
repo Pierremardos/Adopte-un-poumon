@@ -59,7 +59,8 @@ string bloodCmp(char bloodType[3])
         printf("Ce n'est pas un groupe sanguin : ");
         zerofgets(bloodType, 3);
         bloodCmp(bloodType);
+
     }
 
-
+    free(result);
 }

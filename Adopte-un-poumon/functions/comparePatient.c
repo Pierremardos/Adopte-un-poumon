@@ -23,50 +23,76 @@
 
 void compare_bloodType(lung* lung_comparate)
 {
+    int smoke=0;
     //Déclaration des objets
     MYSQL_RES *result = NULL;
     MYSQL_ROW row;
+    //Déclaration du pointeur de structure de type MYSQL
+    MYSQL mysql;
     unsigned int i = 0;
     unsigned int num_champs = 0;
     unsigned long *lengths;
+    double cpt_lung=0;
+    // INTIALISATION DES VARIABLES CHAR QUI VONT STOCKER LES DIFFERENTS HLA
     char hla1[20];
-    strcpy(hla1,"");
+    strcpy(hla1,"p");
     char hla2[20];
-    strcpy(hla2,"");
+    strcpy(hla2,"p");
     char hla3[20];
-    strcpy(hla3,"");
+    strcpy(hla3,"p");
     char hla4[20];
-    strcpy(hla4,"");
+    strcpy(hla4,"p");
     char hla5[20];
-    strcpy(hla5,"");
+    strcpy(hla5,"p");
     char hla6[20];
     char * hla_donator;
-    double cpt_lung=0;
+
+    // INITIALISATION DES VARIABLES CHAR QUI VONT STOCKER LES DIFFERENTS PLASMAPHERESE
+    char plasma1[5];
+    strcpy(plasma1,"p");
+    char plasma2[5];
+    strcpy(plasma2,"p");
+    char plasma3[5];
+    strcpy(plasma3,"p");
+    char plasma4[5];
+    strcpy(plasma4,"p");
+    char plasma5[5];
+    strcpy(plasma5,"p");
+    char * plasma_donator;
+    // REQUETE QUI VA RECUPERER LE RATIO DU POUMON
     cpt_lung = result_cpt(lung_comparate);
     string result_blood;
     string req_select;
-    int smoke=0;
     req_select = malloc(sizeof(char)*500);
     result_blood = malloc(sizeof(char)*30);
+
     // Comparaison du groupe sanguin entre patients et donneur
     result_blood = bloodCmp(lung_comparate->blood_type);
+
     // Comparaison si les patients et donneurs fument ou non
     smoke = smoke_func(lung_comparate);
+
     // Comparaison des HLA du patient et du donneur
     hla_donator = malloc(sizeof(char)*100);
     strcpy(hla_donator,lung_comparate->hla);
     sscanf(hla_donator,"%s %s %s %s %s %s",hla1,hla2,hla3,hla4,hla5,hla6);
-//Déclaration du pointeur de structure de type MYSQL
-    MYSQL mysql;
+
+    // Comparaison du Plasma du patient et du donneur
+    plasma_donator = malloc(sizeof(char)*100);
+    strcpy(plasma_donator,lung_comparate->plasmapherese);
+    sscanf(plasma_donator,"%s %s %s %s %s %s",plasma1,plasma2,plasma3,plasma4,plasma5);
+
     //Initialisation de MySQL
     mysql_init(&mysql);
+
     //Options de connexion
     mysql_options(&mysql,MYSQL_READ_DEFAULT_GROUP,"option");
+
     //Si la connexion réussie...
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
         //Requête qui sélectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
-        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND INSTR(hla, '%s' )=0 AND INSTR(hla, '%s' )=0 AND INSTR(hla, '%s' =0 ) AND INSTR(hla, '%s' )=0 AND INSTR(hla, '%s' )=0",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5);
+        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s') =0 ) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s')",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5,plasma1,plasma2,plasma3,plasma4,plasma5);
         puts(req_select);
         mysql_query(&mysql,req_select);
         //On met le jeu de résultat dans le pointeur result

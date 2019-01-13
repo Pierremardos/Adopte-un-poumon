@@ -51,7 +51,11 @@
 			<Add library="comctl32" />
 			<Add library="../../../../../../Program Files (x86)/CodeBlocks/MinGW/lib/libmysqlclient.a" />
 		</Linker>
+<<<<<<< HEAD
 		<Unit filename="config/config.txt" />
+=======
+		<Unit filename="config/smoke_function.h" />
+>>>>>>> 2576d5028670f9f6347a581c143a3a244bfa3e58
 		<Unit filename="functions/Bloodtype_functions.c">
 			<Option compilerVar="CC" />
 		</Unit>

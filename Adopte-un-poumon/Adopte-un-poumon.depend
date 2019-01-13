@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547399705 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547417912 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -13,7 +13,7 @@
 
 1547342659 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
-1547336073 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
+1547417912 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -38,9 +38,9 @@
 	<MYSQL/mysql.h>
 	"functions/Graphical_header.h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547409405 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547329485 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547409405 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -48,9 +48,9 @@
 	<winsock.h>
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
-	"addPatients_header.h"
 	"config_files.h"
 	"addLungs_fonctions.h"
+	"addPatients_header.h"
 
 1547409505 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
@@ -129,9 +129,9 @@
 
 1547043837 h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
+1547409405 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547333057 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547409405 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -166,7 +166,7 @@
 	"CPT_header.h"
 	"hla_function.h"
 
-1547409058 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+1547417363 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -197,7 +197,7 @@
 1547385461 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 	"CPT_header.h"
 
-1547392868 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+1547412801 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -283,4 +283,13 @@
 	"addLungs_fonctions.h"
 
 1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\smoke_function.h
+
+1547414441 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\plasmapherese_function.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"hla_function.h"
+	"plasmapherese_function.h"
+
+1547413861 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\plasmapherese_function.h
 

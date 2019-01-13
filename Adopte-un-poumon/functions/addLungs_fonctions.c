@@ -203,17 +203,17 @@ void formLungs(GtkWidget * addLungsWindow,GtkWidget * main_box)
     plasmapherese = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), plasmapherese, TRUE, TRUE, 0);
 
-    label = gtk_label_new("Fumeur( 1 oui, 0 non");
+    label = gtk_label_new("Fumeur(1 : oui , 0 : non");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     smoke = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), smoke, TRUE, TRUE, 0);
 
-    label = gtk_label_new("Entrer au bloc :");
+    label = gtk_label_new("Entrer au bloc (date au format JJ/MM/AAAA HH:MM:SS :");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     enter_bloc = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), enter_bloc, TRUE, TRUE, 0);
 
-    label = gtk_label_new("Clampage :");
+    label = gtk_label_new("Clampage (pinces permettant de stoper temporairement la circulation du sang");
     gtk_box_pack_start(GTK_BOX(main_box), label, FALSE, FALSE, 0);
     clamping = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(main_box), clamping, TRUE, TRUE, 0);
