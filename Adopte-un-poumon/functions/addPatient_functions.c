@@ -36,16 +36,14 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
 
 void query(patient * patientStruct)
 {
-<<<<<<< HEAD
     char request[10000];
     char maudit[10];
     double cpt;
     int height;
     int sex;
-=======
+
     string request;
     request = malloc(sizeof(char)*500);
->>>>>>> 821efe29bf01d92f0c747106dbdc85682d2a152b
 
     MYSQL mysql;
     mysql_init(&mysql);
