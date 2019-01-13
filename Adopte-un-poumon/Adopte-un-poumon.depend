@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547324192 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547344421 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -9,23 +9,25 @@
 	"addPatients_header.h"
 	"zerogets.h"
 	"config_files.h"
+	"CPT_header.h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547342659 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
-1547323409 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
+1547336073 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"Bloodtype_header.h"
 	"zerogets.h"
 
-1547323409 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\cpt_functions.c
+1547345344 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\cpt_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"CPT_header.h"
+	"addLungs_fonctions.h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
+1547344899 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
 
 1547323409 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\main.c
 	<stdio.h>
@@ -127,7 +129,7 @@
 
 1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547323409 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547333057 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -149,7 +151,7 @@
 
 1547211562 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 
-1547329027 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+1547345911 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -160,6 +162,8 @@
 	"zerogets.h"
 	"addLungs_fonctions.h"
 	"comparePatient.h"
+	"Bloodtype_header.h"
+	"CPT_header.h"
 
 1547211188 8ef2d7513cc92129a7d9c3d2cb2016a5872b6
 	<stdio.h>
@@ -173,9 +177,10 @@
 
 1547137734 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 
-1547328771 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
+1547345028 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
+	"CPT_header.h"
 
-1547328626 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+1547341068 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -186,7 +191,8 @@
 	"zerogets.h"
 	"addLungs_fonctions.h"
 
-1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+1547344666 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+	<gtk/gtk.h>
 
 1547319708 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>

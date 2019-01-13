@@ -18,6 +18,7 @@ struct patient
     string HLA;
     string plasmapherese;
     string smoke;
+    string cpt;
 };
 
 

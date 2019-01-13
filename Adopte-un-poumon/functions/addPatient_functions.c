@@ -11,6 +11,8 @@
 #include "zerogets.h"
 #include "config_files.h"
 
+#include "CPT_header.h"
+
 
 
 
@@ -36,13 +38,19 @@ void query(patient * patientStruct)
 {
     char request[10000];
     char maudit[10];
+    double cpt;
+    int height;
+    int sex;
 
     MYSQL mysql;
     mysql_init(&mysql);
     mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
     if(mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0))
     {
-        sprintf(request,"INSERT INTO patients(`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `sex`, `bloodtype`, `hla`, `plasmapherese`, `smoke`) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke);
+        height = atoi(patientStruct->height);
+        sex = atoi(patientStruct->sex);
+        cpt = cptT(height,sex);
+        sprintf(request,"INSERT INTO patients(`name`, `surname`, `birth`, `dateInscription`, `height`, `weight`, `sex`, `bloodtype`, `hla`, `plasmapherese`, `smoke`,`cpt`) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%lf')",patientStruct->name,patientStruct->surname,patientStruct->birth,patientStruct->dateInscription,patientStruct->height,patientStruct->weight,patientStruct->sex,patientStruct->bloodType,patientStruct->HLA,patientStruct->plasmapherese,patientStruct->smoke,cpt);
         mysql_query(&mysql, request);
         mysql_close(&mysql);
 

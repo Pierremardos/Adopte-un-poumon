@@ -1,4 +1,8 @@
 
+
+#include <gtk/gtk.h>
+
+
 //Typedef
 
 typedef char* string;

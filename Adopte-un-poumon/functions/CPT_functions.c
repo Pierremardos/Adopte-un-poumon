@@ -3,8 +3,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include "CPT_header.h"
+#include "addLungs_fonctions.h"
 
-double cptT(double height,int sex)
+double cptT(int height,int sex)
 {
     double cptTheorical;
 
@@ -20,19 +21,20 @@ double cptT(double height,int sex)
 
 }
 
-double ratioCptT(double height,int sex, double cptDonator)
+double ratioCptT(int height,int sex, double cptDonator)
 {
     int ratioCptTheaorical;
     ratioCptTheaorical = cptT(height,sex)/cptDonator;
     return ratioCptTheaorical;
 }
-
+/*
 double ratioCptR(double cptDonator, double cptPatient)
 {
     int ratioCptReal;
     ratioCptReal = cptPatient/cptDonator;
     return ratioCptReal;
 }
+*/
 
 int validation(double ratioCpt)
 {
@@ -51,4 +53,25 @@ int validation(double ratioCpt)
     {
         return 1; // to big
     }
+
+
+
 }
+
+
+
+    double result_cpt(lung * lung_comparate)
+    {
+        char cpt [10] = "cpt =";
+        char or[5] = " OR ";
+        int height=0;
+        int sex=0;
+        double cpt_lung=0;
+
+        string result;
+        result = malloc(sizeof(char)*50);
+        height = atoi(lung_comparate->height);
+        sex = atoi(lung_comparate->sex);
+        cpt_lung = cptT(height,sex);
+        return cpt_lung;
+    }

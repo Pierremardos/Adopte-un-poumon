@@ -13,26 +13,25 @@
 #include "addLungs_fonctions.h"
 #include "comparePatient.h"
 
+#include "Bloodtype_header.h"
 
-void close_mysql(string mysql)
-{
-    mysql_close(&mysql);
+#include "CPT_header.h"
 
-}
-void connexion_mysql()
-{
-    MYSQL mysql;
-    mysql_init(&mysql);
-    mysql_options(&mysql, MYSQL_READ_DEFAULT_GROUP, "option");
-    mysql_real_connect(&mysql, "localhost","root","", "pulmonax", 0, NULL, 0);
 
-}
+
 
 void compare_bloodType(lung* lung_comparate)
 {
-    char req_select[1000];
-    char name[20];
-    strcpy(name,"o");
+    double cpt_lung=0;
+    cpt_lung = result_cpt(lung_comparate);
+    printf(" \n %lf \n",cpt_lung);
+
+    string result_blood;
+    string req_select;
+    req_select = malloc(sizeof(char)*500);
+
+    result_blood = malloc(sizeof(char)*30);
+    result_blood = bloodCmp(lung_comparate->blood_type);
 //Déclaration du pointeur de structure de type MYSQL
     MYSQL mysql;
     //Initialisation de MySQL
@@ -44,8 +43,11 @@ void compare_bloodType(lung* lung_comparate)
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
         //Requête qui sélectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
-        sprintf(req_select,"SELECT id FROM patients WHERE bloodtype = ('%s')",lung_comparate->blood_type);
+        sprintf(req_select,"SELECT * FROM patients WHERE bloodtype = %s AND `cpt`/ '%lf' < 1.2 AND `cpt`/ '%lf' > 0.9",result_blood,cpt_lung,cpt_lung);
+        puts(req_select);
         mysql_query(&mysql,req_select);
+        free(result_blood);
+        free(req_select);
         //Déclaration des objets
         MYSQL_RES *result = NULL;
         MYSQL_ROW row;
@@ -73,13 +75,16 @@ void compare_bloodType(lung* lung_comparate)
             for(i = 0; i < num_champs; i++)
             {
                 //On ecrit toutes les valeurs
-                if (row[i])
-                    printf("%.*s", (int) lengths[i], row[i]);
-                else
-                    printf("NULL");
+            printf("[%.*s] ", (int) lengths[i], row[i] ? row[i] : "NULL");
+
+
+
+
             }
             printf("\n");
         }
+
+
 
         //Libération du jeu de résultat
         mysql_free_result(result);

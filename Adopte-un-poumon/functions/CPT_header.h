@@ -3,11 +3,13 @@
 //Typedef
 
 typedef char* string;
+typedef struct lung lung;
 //Structures
 
 // Prototype
 
-double cptT(double height,int sex);
-double ratioCptT(double height,int sex, double cptDonator);
+double cptT(int height,int sex);
+double ratioCptT(int height,int sex, double cptDonator);
 double ratioCptR(double cptDonator, double cptPatient);
 int validation(double ratioCpt);
+double result_cpt(lung*);

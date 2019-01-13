@@ -10,34 +10,40 @@ string bloodCmp(char bloodType[3])
     char b[5] = "'b'";
     char o[5] = "'o'";
     char ab[5] = "'ab'";
-    char and[10] = " AND ";
+    char bloodtype_[15] = "bloodtype =";
+    char or[10] = " OR ";
     string result;
 
     if (!strcmp(bloodType, "a")&& strlen(bloodType)==1)
     {
         result = malloc(20*sizeof(char));
         strcpy(result, a);
-        strcat(result, and);
-        strcat(result, o);
+        strcat(result, or);
+        strcat(result,bloodtype_);
+        strcat(result, ab);
         return result;
     }
     else if (!strcmp(bloodType,"b")&& strlen(bloodType)==1)
     {
         result = malloc(20*sizeof(char));
         strcpy(result, b);
-        strcat(result, and);
-        strcat(result, o);
+        strcat(result, or);
+        strcat(result,bloodtype_);
+        strcat(result, ab);
         return result;
     }
     else if (!strcmp(bloodType,"o")&& strlen(bloodType)==1)
     {
         result = malloc(20*sizeof(char));
         strcpy(result, a);
-        strcat(result, and);
+        strcat(result, or);
+        strcat(result,bloodtype_);
         strcat(result, b);
-        strcat(result, and);
+        strcat(result, or);
+        strcat(result,bloodtype_);
         strcat(result, ab);
-        strcat(result, and);
+        strcat(result, or);
+        strcat(result,bloodtype_);
         strcat(result, o);
         return result;
 
@@ -54,5 +60,6 @@ string bloodCmp(char bloodType[3])
         zerofgets(bloodType, 3);
         bloodCmp(bloodType);
     }
+
 
 }
