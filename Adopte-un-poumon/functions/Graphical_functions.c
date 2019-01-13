@@ -47,7 +47,6 @@ void toolbar_window(GtkWidget * window,GtkWidget * main_box)
     GtkItemFactory * Factory;
     GtkAccelGroup * keys;
     string nouveauPatient, nouveauPoumon;
-    char test[100];
     config  configStruct;
     changes_files(window, &configStruct);
 
@@ -440,7 +439,6 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     pathImage[strcspn(pathImage, "\n")] = 0;
     pathImage2=configStruct.pathImage2;
     pathImage2[strcspn(pathImage2, "\n")] = 0;
-    printf("%s hello",pathImage2);
 
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
