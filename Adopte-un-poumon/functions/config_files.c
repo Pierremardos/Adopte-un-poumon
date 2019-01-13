@@ -12,35 +12,22 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 
     string find_equal, width, height, nouveauPatient, nouveauPoumon, pathImage;
     int actual_carac = 0, cursor=0, counter=0, i=0, size=0,intWidth,intHeight;
-
-
-
-
     FILE* open_file;
     open_file = fopen("config/config.txt","r+");
-
-
-
     if (open_file !=NULL)
     {
         find_equal = malloc(sizeof(char)* 100);
         nouveauPatient = malloc(sizeof(char)* 100);
         nouveauPoumon = malloc(sizeof(char)* 100);
         pathImage = malloc(sizeof(char)* 100);
-
         width = malloc(sizeof(char)* 100);
         height = malloc(sizeof(char)* 100);
-
-
         while ( fgets ( line, sizeof(line), open_file ) != NULL ) // LIS LE FICHIER LIGNE PAR LIGNE
             // Passe a la ligne
         {
-
             cursor = ftell(open_file);
-
             find_equal = strstr(line,"=")+1;
             counter++;
-
             switch(counter)
             {
             case 1 :
@@ -64,14 +51,8 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
                 impossible_change_file(mainWindow);
                 break;
             }
-
-
-
-
         }
-
         addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage);
-
         free(find_equal);
         free(nouveauPatient);
         free(nouveauPoumon);
