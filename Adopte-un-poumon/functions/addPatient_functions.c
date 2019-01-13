@@ -30,7 +30,7 @@ void addPatientStruct(patient * patientStruct,string name,string surname, string
     patientStruct->HLA = HLA;
     patientStruct->plasmapherese = plasmapherese;
     patientStruct->smoke = smoke;
-    puts(patientStruct->name);
+
 
 }
 
