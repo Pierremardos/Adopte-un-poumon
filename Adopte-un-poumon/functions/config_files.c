@@ -20,11 +20,7 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
         nouveauPatient = malloc(sizeof(char)* 100);
         nouveauPoumon = malloc(sizeof(char)* 100);
         pathImage = malloc(sizeof(char)* 100);
-<<<<<<< HEAD
         pathImage2 = malloc(sizeof(char)* 100);
-
-=======
->>>>>>> 2576d5028670f9f6347a581c143a3a244bfa3e58
         width = malloc(sizeof(char)* 100);
         height = malloc(sizeof(char)* 100);
         while ( fgets ( line, sizeof(line), open_file ) != NULL ) // LIS LE FICHIER LIGNE PAR LIGNE
@@ -60,14 +56,11 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
                 break;
             }
         }
-<<<<<<< HEAD
+
 
         addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage, pathImage2);
         free(pathImage);
         free(pathImage2);
-=======
-        addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage);
->>>>>>> 2576d5028670f9f6347a581c143a3a244bfa3e58
         free(find_equal);
         free(nouveauPatient);
         free(nouveauPoumon);
