@@ -7,10 +7,11 @@
 
 void changes_files(GtkWidget * mainWindow, config * configStruct)
 {
+
     char line [100]; // Maximum de caractere sur une line
 
-    string find_equal, pathImage, width, height;
-    int actual_carac = 0, cursor=0, counter=0, i=0, size=0,intWidht,intHeight;
+    string find_equal, width, height, nouveauPatient, nouveauPoumon, pathImage;
+    int actual_carac = 0, cursor=0, counter=0, i=0, size=0,intWidth,intHeight;
 
 
 
@@ -23,6 +24,8 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
     if (open_file !=NULL)
     {
         find_equal = malloc(sizeof(char)* 100);
+        nouveauPatient = malloc(sizeof(char)* 100);
+        nouveauPoumon = malloc(sizeof(char)* 100);
         pathImage = malloc(sizeof(char)* 100);
 
         width = malloc(sizeof(char)* 100);
@@ -33,7 +36,6 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
             // Passe a la ligne
         {
 
-
             cursor = ftell(open_file);
 
             find_equal = strstr(line,"=")+1;
@@ -42,29 +44,37 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
             switch(counter)
             {
             case 1 :
-                strcpy(pathImage, find_equal);
+                strcpy(width, find_equal);
+                intWidth =  atoi(width);
                 break;
             case 2 :
-                strcpy(width, find_equal);
-                intWidht =  atoi(width);
-                break;
-            case 3 :
                 strcpy(height, find_equal);
                 intHeight = atoi(height);
+                break;
+            case 3 :
+                strcpy(nouveauPatient, find_equal);
+                break;
+            case 4 :
+                strcpy(nouveauPoumon, find_equal);
+                break;
+            case 5 :
+                strcpy(pathImage, find_equal);
                 break;
             default:
                 impossible_change_file(mainWindow);
                 break;
-
             }
 
 
 
 
         }
-        addConfigStruct(configStruct, pathImage, intWidht, intHeight);
+
+        addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage);
+
         free(find_equal);
-        free(pathImage);
+        free(nouveauPatient);
+        free(nouveauPoumon);
         free(width);
         free(height);
 
@@ -77,9 +87,12 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
     }
 }
 
-void addConfigStruct(config * configStruct, string pathImage,int width, int height)
+void addConfigStruct(config * configStruct,int width, int height, string nouveauPatient, string nouveauPoumon, string pathImage)
 {
-    configStruct->pathImage = pathImage;
     configStruct->width = width;
     configStruct->height = height;
+    configStruct->nouveauPatient = nouveauPatient;
+    configStruct->nouveauPoumon = nouveauPoumon;
+    configStruct->pathImage = pathImage;
+
 }

@@ -83,6 +83,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="functions/erreur.h" />
+		<Unit filename="functions/hla_function.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/hla_function.h" />
+		<Unit filename="functions/smoke_function.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/smoke_function.h" />
 		<Unit filename="functions/zerogets.c">
 			<Option compilerVar="CC" />
 		</Unit>

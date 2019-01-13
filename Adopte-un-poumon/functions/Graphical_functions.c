@@ -8,9 +8,9 @@
 #define EXEMPLE_2 1
 #define EXEMPLE_3 2
 #include "Graphical_header.h"
-#include "addPatients_header.h"
 #include "config_files.h"
 #include "addLungs_fonctions.h"
+#include "addPatients_header.h"
 
 
 
@@ -56,15 +56,9 @@ void  leave(gpointer data, guint callback_action,GtkWidget *widget)
     }
 }
 
-static GtkItemFactoryEntry MenuItem[] = {
-    { "/_Fichier", NULL, NULL, 0, "<Branch>" },
-    { "/Fichier/_Lister les patients", NULL, NULL, 0, "<StockItem>", GTK_STOCK_FIND },
-    { "/Fichier/_Nouveaux patients", "<ctrl>A", addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Nouveaux poumons", "<ctrl>S", addLungsWindow, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
-};
 
-static gint iNbMenuItem = sizeof(MenuItem) / sizeof(MenuItem[0]);
+
+
 
 
 
@@ -73,6 +67,25 @@ void toolbar_window(GtkWidget * window,GtkWidget * main_box)
     GtkWidget * toolbar;
     GtkItemFactory * Factory;
     GtkAccelGroup * keys;
+    string nouveauPatient, nouveauPoumon;
+    char test[100];
+    config  configStruct;
+    changes_files(window, &configStruct);
+
+    nouveauPatient = configStruct.nouveauPatient;
+    nouveauPatient[strcspn(nouveauPatient, "\n")] = 0;
+    nouveauPoumon = configStruct.nouveauPoumon;
+    nouveauPoumon[strcspn(nouveauPoumon, "\n")] = 0;
+
+
+    GtkItemFactoryEntry MenuItem[] = {
+    { "/_Fichier", NULL, NULL, 0, "<Branch>" },
+    { "/Fichier/_Nouveaux patients", nouveauPatient, addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
+    { "/Fichier/_Nouveaux poumons", nouveauPoumon, addLungsWindow, 0, "<StockItem>", GTK_STOCK_ADD },
+    { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
+};
+    static gint iNbMenuItem = sizeof(MenuItem) / sizeof(MenuItem[0]);
+
 
     /* Création de la table d'accélération */
     keys = gtk_accel_group_new();

@@ -1,3 +1,5 @@
-path_image=organes.jpg
-width=200
-height= 200
+width=1000
+height= 1000
+Nouveau patient=<ctrl>U
+Nouveau poumon=<ctrl>S
+icone =organes.jpg

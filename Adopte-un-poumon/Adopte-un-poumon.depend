@@ -52,7 +52,7 @@
 	"config_files.h"
 	"addLungs_fonctions.h"
 
-1547331407 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+1547405637 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -62,25 +62,27 @@
 	"addPatients_header.h"
 	"zerogets.h"
 	"config_files.h"
+	"CPT_header.h"
 
-1547323052 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addpatients_header.h
 
-1547333002 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"Bloodtype_header.h"
 	"zerogets.h"
 
-1546534781 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_functions.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_functions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"CPT_header.h"
+	"addLungs_fonctions.h"
 
-1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\cpt_header.h
 
-1547295616 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
+1547408939 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -88,13 +90,13 @@
 	<winsock.h>
 	<MYSQL/mysql.h>
 	"Graphical_header.h"
-	"addPatients_header.h"
 	"config_files.h"
 	"addLungs_fonctions.h"
+	"addPatients_header.h"
 
-1547312732 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
+1547400523 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\graphical_header.h
 
-1547044241 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\main.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\main.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -103,7 +105,7 @@
 	<MYSQL/mysql.h>
 	"functions/Graphical_header.h"
 
-1546530945 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_header.h
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\bloodtype_header.h
 
 1547323409 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\zerogets.h
 
@@ -117,9 +119,9 @@
 
 1547211500 D
 
-1547043803 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\zerogets.h
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\zerogets.h
 
-1547043837 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\zerogets.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\zerogets.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -139,9 +141,9 @@
 
 1547051767 449a3a022bf97c0d7e81830d10753cc50e0f5
 
-1547331384 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
+1547408462 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.h
 
-1547331378 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
+1547408965 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\config_files.c
 	<stdio.h>
 	<stdlib.h>
 	<gtk/gtk.h>
@@ -149,7 +151,7 @@
 	"config_files.h"
 	"Graphical_header.h"
 
-1547333148 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -160,6 +162,8 @@
 	"zerogets.h"
 	"addLungs_fonctions.h"
 	"comparePatient.h"
+	"Bloodtype_header.h"
+	"CPT_header.h"
 
 1547391781 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
 	<stdio.h>
@@ -185,7 +189,8 @@
 	"comparePatient.h"
 	"zerogets.h"
 
-1547333148 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
+	"CPT_header.h"
 
 1547385461 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.h
 	"CPT_header.h"
@@ -204,7 +209,7 @@
 1547344666 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
 	<gtk/gtk.h>
 
-1547333148 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -215,9 +220,10 @@
 	"zerogets.h"
 	"addLungs_fonctions.h"
 
-1547319708 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\addlungs_fonctions.h
+	<gtk/gtk.h>
 
-1547295620 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\erreur.c
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\erreur.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -256,4 +262,22 @@
 	"addLungs_fonctions.h"
 
 1547392996 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.h
+
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\hla_function.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"hla_function.h"
+	"addLungs_fonctions.h"
+
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\hla_function.h
+
+1547399209 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\smoke_function.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"smoke_function.h"
+	"addLungs_fonctions.h"
+
+1547399209 c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\smoke_function.h
 
