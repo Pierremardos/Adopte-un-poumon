@@ -13,4 +13,5 @@ struct hla
     string hla_5;
 };
 // Prototype
+void hla_function(lung *);
 
