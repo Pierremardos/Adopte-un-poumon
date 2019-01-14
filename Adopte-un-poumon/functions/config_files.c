@@ -9,14 +9,14 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
 {
 
     char line [100]; // Maximum de caractere sur une line
-
-    string find_equal, width, height, nouveauPatient, nouveauPoumon, pathImage, pathImage2;
+    char find_equal[100];
+    string width, height, nouveauPatient, nouveauPoumon, pathImage, pathImage2;
     int actual_carac = 0, cursor=0, counter=0, i=0, size=0,intWidth,intHeight;
     FILE* open_file;
     open_file = fopen("config/config.txt","r+");
     if (open_file !=NULL)
     {
-        find_equal = malloc(sizeof(char)* 100);
+        //find_equal = malloc(sizeof(char)* 1000);
         nouveauPatient = malloc(sizeof(char)* 100);
         nouveauPoumon = malloc(sizeof(char)* 100);
         pathImage = malloc(sizeof(char)* 100);
@@ -27,7 +27,10 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
             // Passe a la ligne
         {
             cursor = ftell(open_file);
-            find_equal = strstr(line,"=")+1;
+            //find_equal = strstr(line,"=")+1;
+            strcpy(find_equal,strstr(line,"=")+1);
+            find_equal[strcspn(find_equal, "\n")] = 0;
+            puts(find_equal);
             counter++;
             switch(counter)
             {
@@ -61,11 +64,11 @@ void changes_files(GtkWidget * mainWindow, config * configStruct)
         addConfigStruct(configStruct, intWidth, intHeight, nouveauPatient, nouveauPoumon, pathImage, pathImage2);
         free(pathImage);
         free(pathImage2);
-        free(find_equal);
         free(nouveauPatient);
         free(nouveauPoumon);
         free(width);
         free(height);
+        //free(find_equal);
 
         fclose( open_file );
 

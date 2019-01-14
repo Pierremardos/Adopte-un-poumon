@@ -427,17 +427,18 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
 
 
     int width,height;
-    string pathImage, pathImage2;
+    char pathImage[200],pathImage2[200];
     //recuperation dans le fichier config
     config configStruct;
     changes_files(MainWindow, &configStruct);
     /////////////////////////////////////////
-
     width=configStruct.width;
     height=configStruct.height;
-    pathImage=configStruct.pathImage;
+
+    strcpy(pathImage,configStruct.pathImage);
+
     pathImage[strcspn(pathImage, "\n")] = 0;
-    pathImage2=configStruct.pathImage2;
+    strcpy(pathImage2,configStruct.pathImage2);
     pathImage2[strcspn(pathImage2, "\n")] = 0;
 
     /* Initialisation de GTK+ */
