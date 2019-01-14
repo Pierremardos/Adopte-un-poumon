@@ -59,9 +59,7 @@ void compare_bloodType(lung* lung_comparate)
     strcpy(plasma5,"p");
     char * plasma_donator;
     // REQUETE QUI VA RECUPERER LE RATIO DU POUMON
-=======
-    double cpt_lung=0;
->>>>>>> parent of a93ce3e... push
+
     cpt_lung = result_cpt(lung_comparate);
     string result_blood;
     string req_select;
@@ -111,7 +109,7 @@ void compare_bloodType(lung* lung_comparate)
             for(i = 0; i < num_champs; i++)
             {
                 //On ecrit toutes les valeurs
-            printf("[%.*s] ", (int) lengths[i], row[i] ? row[i] : "NULL");
+                printf("[%.*s] ", (int) lengths[i], row[i] ? row[i] : "NULL");
             }
             printf("\n");
         }

@@ -229,7 +229,7 @@ void formLungs(GtkWidget * addLungsWindow,GtkWidget * main_box)
     /* Creation et insertion des elements contenus dans le premier GtkFrame */
 
 
- button_addLungs(addLungsWindow, main_box,last_name,first_name, sex,old,blood_type, height, weight, hla, plasmapherese, smoke,enter_bloc,clamping,notes);
+    button_addLungs(addLungsWindow, main_box,last_name,first_name, sex,old,blood_type, height, weight, hla, plasmapherese, smoke,enter_bloc,clamping,notes);
 
 }
 

@@ -17,11 +17,11 @@ void  leave(gpointer data, guint callback_action,GtkWidget *widget)
     GtkWidget * ask_leave;
 
     ask_leave = gtk_message_dialog_new(GTK_WINDOW(data),
-        GTK_DIALOG_MODAL,
-        GTK_MESSAGE_QUESTION,
-        GTK_BUTTONS_YES_NO,
-        "Voulez vous vraiment\n"
-        "quitter le programme?");
+                                       GTK_DIALOG_MODAL,
+                                       GTK_MESSAGE_QUESTION,
+                                       GTK_BUTTONS_YES_NO,
+                                       "Voulez vous vraiment\n"
+                                       "quitter le programme?");
 
     switch(gtk_dialog_run(GTK_DIALOG(ask_leave)))
     {
@@ -56,12 +56,13 @@ void toolbar_window(GtkWidget * window,GtkWidget * main_box)
     nouveauPoumon[strcspn(nouveauPoumon, "\n")] = 0;
 
 
-    GtkItemFactoryEntry MenuItem[] = {
-    { "/_Fichier", NULL, NULL, 0, "<Branch>" },
-    { "/Fichier/_Nouveaux patients", nouveauPatient, addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Nouveaux poumons", nouveauPoumon, addLungsWindow, 0, "<StockItem>", GTK_STOCK_ADD },
-    { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
-};
+    GtkItemFactoryEntry MenuItem[] =
+    {
+        { "/_Fichier", NULL, NULL, 0, "<Branch>" },
+        { "/Fichier/_Nouveaux patients", nouveauPatient, addPatientWindow, 0, "<StockItem>", GTK_STOCK_ADD },
+        { "/Fichier/_Nouveaux poumons", nouveauPoumon, addLungsWindow, 0, "<StockItem>", GTK_STOCK_ADD },
+        { "/Fichier/_Fermer", "<ctrl>F", leave, 0, "<StockItem>", GTK_STOCK_CLOSE }
+    };
     static gint iNbMenuItem = sizeof(MenuItem) / sizeof(MenuItem[0]);
 
 
@@ -86,7 +87,7 @@ void toolbar_window(GtkWidget * window,GtkWidget * main_box)
 
 void main_program(int argc, char ** argv)
 {
-  GtkWidget * main_box = NULL;
+    GtkWidget * main_box = NULL;
     GtkWidget * window=NULL;
 
     int width,height;
@@ -135,7 +136,7 @@ void main_program(int argc, char ** argv)
     gtk_container_add(GTK_CONTAINER(window), main_box);
 
     // AJOUT DE LA TOOLBAR DANS LA FENETRE
-        toolbar_window(window,main_box);
+    toolbar_window(window,main_box);
 
     gtk_widget_show_all(window);
     gtk_main();
@@ -190,21 +191,21 @@ void listUsers (gchar * login, gchar * password,GtkWidget * second_window,GtkWid
             lengths = mysql_fetch_lengths(result);
         }
 
-       if (counter)
-            {
-                main_program(argc,argv);
-                //Libération du jeu de résultat
-                mysql_free_result(result);
+        if (counter)
+        {
+            main_program(argc,argv);
+            //Libération du jeu de résultat
+            mysql_free_result(result);
 
-                //Fermeture de MySQL
-                mysql_close(&mysql);
+            //Fermeture de MySQL
+            mysql_close(&mysql);
 
-            }
-            else
-            {
-                display_error_message(second_window,main_box);
-                // listUsers (login,password,second_window,main_box);
-            }
+        }
+        else
+        {
+            display_error_message(second_window,main_box);
+            // listUsers (login,password,second_window,main_box);
+        }
 
 
     }
@@ -424,8 +425,6 @@ void creation_label (GtkWidget * MainWindow,GtkWidget* mainLabel,gchar* convert_
 void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLabel,gchar* convert_mainLabel,gchar * positionLabel)
 {
     GtkWidget * main_box = NULL;
-    printf("Ok");
-    printf("Ok");
     int width,height;
     char pathImage[200],pathImage2[200];
     //recuperation dans le fichier config
@@ -433,14 +432,12 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     config configStruct;
 
     changes_files(MainWindow, &configStruct);
-            printf("Ok");
 
     /////////////////////////////////////////
     width=configStruct.width;
     height=configStruct.height;
 
     strcpy(pathImage,configStruct.pathImage);
-
     pathImage[strcspn(pathImage, "\n")] = 0;
     strcpy(pathImage2,configStruct.pathImage2);
     pathImage2[strcspn(pathImage2, "\n")] = 0;

@@ -15,8 +15,8 @@ void hla_function(lung * lung_comparate)
     //addHlaStruct(&hlaStruct);
 
     sscanf(hla_donator,"%s %s",test,test1);
-puts(test);
-puts(test1);
+    puts(test);
+    puts(test1);
 
 
 
