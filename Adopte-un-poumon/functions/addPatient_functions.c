@@ -83,9 +83,10 @@ void addPatientWindow(int argc, char ** argv,GtkWidget * mainWindow)
     width=configStruct->width;
     height=configStruct->height;
     pathImage=configStruct->pathImage;
+    pathImage[strcspn(pathImage, "\n")] = 0;
 //La fonction strcspn() renvoie le nombre de caractères du segment initial de pathimage constitué uniquement de caractères absents de "\n".
 
-    pathImage[strcspn(pathImage, "\n")] = 0;
+
     //strcpy(pathImage,configStruct->pathImage);
 
     /* Initialisation de GTK+ */

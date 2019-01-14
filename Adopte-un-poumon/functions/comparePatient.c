@@ -24,10 +24,10 @@
 void compare_bloodType(lung* lung_comparate)
 {
     int smoke=0;
-    //Déclaration des objets
+    //Dï¿½claration des objets
     MYSQL_RES *result = NULL;
     MYSQL_ROW row;
-    //Déclaration du pointeur de structure de type MYSQL
+    //Dï¿½claration du pointeur de structure de type MYSQL
     MYSQL mysql;
     unsigned int i = 0;
     unsigned int num_champs = 0;
@@ -60,6 +60,7 @@ void compare_bloodType(lung* lung_comparate)
     strcpy(plasma5,"p");
     char * plasma_donator;
     // REQUETE QUI VA RECUPERER LE RATIO DU POUMON
+
     cpt_lung = result_cpt(lung_comparate);
     string result_blood;
     string req_select;
@@ -88,18 +89,19 @@ void compare_bloodType(lung* lung_comparate)
     //Options de connexion
     mysql_options(&mysql,MYSQL_READ_DEFAULT_GROUP,"option");
 
-    //Si la connexion réussie...
+    //Si la connexion rï¿½ussie...
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
-        //Requête qui sélectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
-        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s') =0 ) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s')",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5,plasma1,plasma2,plasma3,plasma4,plasma5);
+        hla_function(lung_comparate);
+        //Requï¿½te qui sï¿½lectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
+        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s') =0 ) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (INSTR(plasmapherese, '%s' )>=0) AND (INSTR(plasmapherese, '%s' )>=0) AND (INSTR(plasmapherese, '%s') >=0 ) AND (INSTR(plasmapherese, '%s' )>=0) AND (INSTR(plasmapherese, '%s' )>=0)",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5,plasma1,plasma2,plasma3,plasma4,plasma5);
         puts(req_select);
         mysql_query(&mysql,req_select);
-        //On met le jeu de résultat dans le pointeur result
+        //On met le jeu de rï¿½sultat dans le pointeur result
         result = mysql_use_result(&mysql);
-        //On récupère le nombre de champs
+        //On rï¿½cupï¿½re le nombre de champs
         num_champs = mysql_num_fields(result);
-        //Tant qu'il y a encore un résultat ...
+        //Tant qu'il y a encore un rï¿½sultat ...
         while ((row = mysql_fetch_row(result)))
         {
             //On stocke ces tailles dans le pointeur
@@ -112,14 +114,14 @@ void compare_bloodType(lung* lung_comparate)
             }
             printf("\n");
         }
-        //Libération du jeu de résultat
+        //Libï¿½ration du jeu de rï¿½sultat
         mysql_free_result(result);
         //Fermeture de MySQL
         mysql_close(&mysql);
     }
     else  //Sinon ...
     {
-        printf("Une erreur s'est produite lors de la connexion à la BDD!");
+        printf("Une erreur s'est produite lors de la connexion ï¿½ la BDD!");
     }
 
     // FREE MALLOC

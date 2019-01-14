@@ -52,7 +52,6 @@
 			<Add library="../../../../../../Program Files (x86)/CodeBlocks/MinGW/lib/libmysqlclient.a" />
 		</Linker>
 		<Unit filename="config/config.txt" />
-		<Unit filename="config/smoke_function.h" />
 		<Unit filename="functions/Bloodtype_functions.c">
 			<Option compilerVar="CC" />
 		</Unit>

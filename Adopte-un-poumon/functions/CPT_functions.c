@@ -60,18 +60,18 @@ int validation(double ratioCpt)
 
 
 
-    double result_cpt(lung * lung_comparate)
-    {
-        char cpt [10] = "cpt =";
-        char or[5] = " OR ";
-        int height=0;
-        int sex=0;
-        double cpt_lung=0;
+double result_cpt(lung * lung_comparate)
+{
+    char cpt [10] = "cpt =";
+    char or[5] = " OR ";
+    int height=0;
+    int sex=0;
+    double cpt_lung=0;
 
-        string result;
-        result = malloc(sizeof(char)*50);
-        height = atoi(lung_comparate->height);
-        sex = atoi(lung_comparate->sex);
-        cpt_lung = cptT(height,sex);
-        return cpt_lung;
-    }
+    string result;
+    result = malloc(sizeof(char)*50);
+    height = atoi(lung_comparate->height);
+    sex = atoi(lung_comparate->sex);
+    cpt_lung = cptT(height,sex);
+    return cpt_lung;
+}
