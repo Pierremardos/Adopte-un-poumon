@@ -1,6 +1,6 @@
 width=200
 height=200
-Nouveau patient=<ctrl>A
+Nouveau patient=<ctrl>U
 Nouveau poumon=<ctrl>S
 Icone de l'application=organes.jpg
 Image d'accueil=esgi.png
