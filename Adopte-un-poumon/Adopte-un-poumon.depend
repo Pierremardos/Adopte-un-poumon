@@ -1,5 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1547422368 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+=======
+1547391718 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\addpatient_functions.c
+>>>>>>> parent of a93ce3e... push
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -166,7 +170,11 @@
 	"CPT_header.h"
 	"hla_function.h"
 
+<<<<<<< HEAD
 1547422368 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+=======
+1547391781 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\comparepatient.c
+>>>>>>> parent of a93ce3e... push
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -179,7 +187,6 @@
 	"comparePatient.h"
 	"Bloodtype_header.h"
 	"CPT_header.h"
-	"hla_function.h"
 
 1547211188 8ef2d7513cc92129a7d9c3d2cb2016a5872b6
 	<stdio.h>
@@ -258,13 +265,18 @@
 
 1547422368 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\smoke_function.h
 
+<<<<<<< HEAD
 1547422368 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.c
+=======
+1547395847 source:c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.c
+>>>>>>> parent of a93ce3e... push
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"hla_function.h"
 	"addLungs_fonctions.h"
 
+<<<<<<< HEAD
 1547422368 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.h
 
 1547409379 source:c:\users\jonas\onedrive\documents\adopte-un-poumon\adopte-un-poumon\functions\hla_function.c
@@ -293,4 +305,7 @@
 	"plasmapherese_function.h"
 
 1547413861 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\plasmapherese_function.h
+=======
+1547392996 c:\users\arthur\documents\github\adopte-un-poumon\adopte-un-poumon\functions\hla_function.h
+>>>>>>> parent of a93ce3e... push
 

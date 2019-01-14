@@ -16,13 +16,13 @@
 #include "Bloodtype_header.h"
 
 #include "CPT_header.h"
-#include "hla_function.h"
 
 
 
 
 void compare_bloodType(lung* lung_comparate)
 {
+<<<<<<< HEAD
     int smoke=0;
     //Déclaration des objets
     MYSQL_RES *result = NULL;
@@ -60,6 +60,9 @@ void compare_bloodType(lung* lung_comparate)
     strcpy(plasma5,"p");
     char * plasma_donator;
     // REQUETE QUI VA RECUPERER LE RATIO DU POUMON
+=======
+    double cpt_lung=0;
+>>>>>>> parent of a93ce3e... push
     cpt_lung = result_cpt(lung_comparate);
     string result_blood;
     string req_select;
@@ -71,6 +74,7 @@ void compare_bloodType(lung* lung_comparate)
 
     // Comparaison si les patients et donneurs fument ou non
     smoke = smoke_func(lung_comparate);
+<<<<<<< HEAD
 
     // Comparaison des HLA du patient et du donneur
     hla_donator = malloc(sizeof(char)*100);
@@ -82,6 +86,16 @@ void compare_bloodType(lung* lung_comparate)
     strcpy(plasma_donator,lung_comparate->plasmapherese);
     sscanf(plasma_donator,"%s %s %s %s %s %s",plasma1,plasma2,plasma3,plasma4,plasma5);
 
+=======
+    unsigned int i = 0;
+    unsigned int num_champs = 0;
+    unsigned long *lengths;
+    //Déclaration des objets
+    MYSQL_RES *result = NULL;
+    MYSQL_ROW row;
+//Déclaration du pointeur de structure de type MYSQL
+    MYSQL mysql;
+>>>>>>> parent of a93ce3e... push
     //Initialisation de MySQL
     mysql_init(&mysql);
 
@@ -91,8 +105,13 @@ void compare_bloodType(lung* lung_comparate)
     //Si la connexion réussie...
     if(mysql_real_connect(&mysql, "localhost","root", "", "pulmonax", 0, NULL, 0))
     {
+        hla_function(lung_comparate);
         //Requête qui sélectionne tout dans ma table patients ou le bloodtype est egal a celui qu'on vient d'ecrire
+<<<<<<< HEAD
         sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s') =0 ) AND (INSTR(hla, '%s' )=0) AND (INSTR(hla, '%s' )=0) AND (plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s' OR plasmapherese = '%s')",smoke,result_blood,cpt_lung,cpt_lung,hla1,hla2,hla3,hla4,hla5,plasma1,plasma2,plasma3,plasma4,plasma5);
+=======
+        sprintf(req_select,"SELECT * FROM patients WHERE (`smoke` = '%d' ) AND (bloodtype = %s) AND (`cpt`/ '%lf' < 1.2) AND (`cpt`/ '%lf' > 0.9)",smoke,result_blood,cpt_lung,cpt_lung);
+>>>>>>> parent of a93ce3e... push
         puts(req_select);
         mysql_query(&mysql,req_select);
         //On met le jeu de résultat dans le pointeur result
@@ -108,7 +127,7 @@ void compare_bloodType(lung* lung_comparate)
             for(i = 0; i < num_champs; i++)
             {
                 //On ecrit toutes les valeurs
-                printf("[%.*s] ", (int) lengths[i], row[i] ? row[i] : "NULL");
+            printf("[%.*s] ", (int) lengths[i], row[i] ? row[i] : "NULL");
             }
             printf("\n");
         }
@@ -125,6 +144,5 @@ void compare_bloodType(lung* lung_comparate)
     // FREE MALLOC
     free(result_blood);
     free(req_select);
-    free(hla_donator);
 
 }
