@@ -424,13 +424,17 @@ void creation_label (GtkWidget * MainWindow,GtkWidget* mainLabel,gchar* convert_
 void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLabel,gchar* convert_mainLabel,gchar * positionLabel)
 {
     GtkWidget * main_box = NULL;
-
-
+    printf("Ok");
+    printf("Ok");
     int width,height;
     string pathImage, pathImage2;
     //recuperation dans le fichier config
+
     config configStruct;
+
     changes_files(MainWindow, &configStruct);
+            printf("Ok");
+
     /////////////////////////////////////////
 
     width=configStruct.width;
@@ -439,9 +443,9 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     pathImage[strcspn(pathImage, "\n")] = 0;
     pathImage2=configStruct.pathImage2;
     pathImage2[strcspn(pathImage2, "\n")] = 0;
-
     /* Initialisation de GTK+ */
     gtk_init(&argc, &argv);
+
 
     /* Création de la fenêtre */
     MainWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -472,6 +476,7 @@ void firstWindow (GtkWidget * MainWindow,int argc, char **argv,GtkWidget* mainLa
     main_box = gtk_vbox_new(TRUE, -50);
     /* Ajout de la GtkVBox dans la fenetre */
     gtk_container_add(GTK_CONTAINER(MainWindow), main_box);
+
 
 
     // CREATION DU PREMIER LABEL DE LA FENETRE
