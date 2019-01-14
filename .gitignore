@@ -1,12 +1,5 @@
 
-<<<<<<< HEAD
 *.layout
-=======
-Adopte-un-poumon/Adopte-un-poumon.layout
-Adopte-un-poumon/Adopte-un-poumon.depend
-*.layout
-*.depend
->>>>>>> e29e3c614f6e26e2dbae969b75ff1fd7cc6b417f
 *.depend
 Adopte-un-poumon/Adopte-un-poumon.layout
 *.layout
@@ -16,19 +9,10 @@ Adopte-un-poumon/Adopte-un-poumon.layout
 *.layout
 *.layout
 *.layout
-<<<<<<< HEAD
 Adopte-un-poumon/Adopte-un-poumon.layout
 Adopte-un-poumon/Adopte-un-poumon.layout
-=======
-*.depend
->>>>>>> c8891da900a763272adc6e621dbc1d351438a706
 *.depend
 *.layout
 *.layout
-<<<<<<< HEAD
 *.depend
 *.layout
-=======
-*.o
-*.depend
->>>>>>> caea4389dd5e4f76450fff4c389c098f897f7546
